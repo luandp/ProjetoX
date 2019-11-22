@@ -15,8 +15,7 @@ public class ProjetoX {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Ai dentu seu doidin");
-        
+       
         // TODO code application logic here
     }
     
