@@ -18,6 +18,7 @@ public class ProjetoX {
         
         System.out.println("Hello World");
         System.out.println("Teste");
+        System.out.println("Teste2");
         
         // TODO code application logic here
     }
