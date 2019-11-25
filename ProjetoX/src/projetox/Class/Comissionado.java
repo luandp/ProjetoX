@@ -9,6 +9,22 @@ package projetox.Class;
  *
  * @author Luan Paulo
  */
-public class Comissionado {
+public class Comissionado extends Funcionario{
     
+        double comissao;
+
+    public Comissionado(double comissao, double salario, String senha, int id, String nome, String CPF, String cargo) {
+        super(salario, senha, id, nome, CPF, cargo);
+        this.comissao = comissao;
+    }
+
+    public double getComissao() {
+        return comissao;
+    }
+
+    public void setComissao(double comissao) {
+        this.comissao = comissao;
+    }
+        
+        
 }

@@ -3,21 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetox;
+package projetox.Class;
 
 /**
  *
  * @author Luan Paulo
  */
-public class ProjetoX {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-       
-    }
+public class VariaveisSistema {
     
 }
-
-        // TODO code application logic here
