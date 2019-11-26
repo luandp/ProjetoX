@@ -9,6 +9,6 @@ package projetox.Model;
  *
  * @author Luan Paulo
  */
-public class Modelo {
+public class Model_Aluguel {
     
 }
