@@ -90,18 +90,20 @@ public class Tela_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
+            /*
             Usuario usu = new Usuario();
             usu.setLogin(login.getText());
             usu.setSenha(senha.getText());
             Regra_Negocio_Usuario negocio = new Regra_Negocio_Usuario();
             negocio.validarLogin(usu);
             dispose();
+*/
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
         JOptionPane.showMessageDialog(null, "Seja Bem-Vindo ao Sistema","Bem Vindo", JOptionPane.INFORMATION_MESSAGE);
-
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
