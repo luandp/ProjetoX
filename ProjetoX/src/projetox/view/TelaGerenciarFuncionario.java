@@ -68,6 +68,11 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
         JBtnRemover.setText("Remover");
 
         JBtnCadastrar.setText("Cadastrar");
+        JBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnCadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,7 +130,15 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
 
     private void JBtnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnAtualizarActionPerformed
         // TODO add your handling code here:
+        TelaAtualizarFuncionario TAtuF = new TelaAtualizarFuncionario();
+        TAtuF.show();
     }//GEN-LAST:event_JBtnAtualizarActionPerformed
+
+    private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
+        // TODO add your handling code here:
+        TelaCadastrarFuncionario TCadF = new TelaCadastrarFuncionario();
+        TCadF.show();
+    }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
