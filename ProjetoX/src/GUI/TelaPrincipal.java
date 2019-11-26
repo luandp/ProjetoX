@@ -168,8 +168,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 */
     private void JSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JSairMouseClicked
         Runtime.getRuntime().exit(0); 
-        //TelaLogin tl = new  TelaLogin();
-        //tl.show();
+        TelaLogin tl = new  TelaLogin();
+        tl.show();
         
     }//GEN-LAST:event_JSairMouseClicked
 
