@@ -40,10 +40,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         JSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema ProjetoX - Locação e Venda de Carros");
 
         JCadastrar.setText("Gerenciar");
 
         JCadCarro.setText("Carro");
+        JCadCarro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JCadCarroMouseClicked(evt);
+            }
+        });
         JCadCarro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCadCarroActionPerformed(evt);
@@ -90,6 +96,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         JMenu.add(JOperacao);
 
         JEstoque.setText("Estoque");
+        JEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JEstoqueMouseClicked(evt);
+            }
+        });
         JEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JEstoqueActionPerformed(evt);
@@ -98,6 +109,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         JMenu.add(JEstoque);
 
         JFolha.setText("Folha de Pagamento");
+        JFolha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JFolhaMouseClicked(evt);
+            }
+        });
         JFolha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JFolhaActionPerformed(evt);
@@ -136,30 +152,43 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void JCadCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCadCarroActionPerformed
             //chamar tela Listar Carro
+            TelaGerenciarCarro GCarro = new TelaGerenciarCarro();
+            GCarro.show();
     }//GEN-LAST:event_JCadCarroActionPerformed
 
     private void JCadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCadClienteActionPerformed
            //chamar tela Listar Cliente
+           TelaGerenciarCliente GCliente = new TelaGerenciarCliente();
+            GCliente.show();
     }//GEN-LAST:event_JCadClienteActionPerformed
 
     private void JCadFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCadFuncionarioActionPerformed
            //chamar tela Listar Funcionario
+           TelaGerenciarFuncionario GFunc = new TelaGerenciarFuncionario();
+           GFunc.show();
     }//GEN-LAST:event_JCadFuncionarioActionPerformed
 
     private void JOpeAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JOpeAluguelActionPerformed
             //chamar tela Listar Aluguel
+            TelaGerenciarAluguel GAlug = new TelaGerenciarAluguel();
+            GAlug.show();
+            
     }//GEN-LAST:event_JOpeAluguelActionPerformed
 
     private void JOpeVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JOpeVendasActionPerformed
          //chamar tela Listar Vendas
+         TelaGerenciarVenda GVend = new TelaGerenciarVenda();
+         GVend.show();
     }//GEN-LAST:event_JOpeVendasActionPerformed
 
     private void JEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JEstoqueActionPerformed
         //chamar tela Gerenciar Estoque
+        //evento morto
     }//GEN-LAST:event_JEstoqueActionPerformed
 
     private void JFolhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFolhaActionPerformed
         //chamar tela Gerenciar Folha
+        //evento morto
     }//GEN-LAST:event_JFolhaActionPerformed
 
     private void JSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JSairActionPerformed
@@ -172,6 +201,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tl.show();
         
     }//GEN-LAST:event_JSairMouseClicked
+
+    private void JCadCarroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JCadCarroMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCadCarroMouseClicked
+
+    private void JEstoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JEstoqueMouseClicked
+        // TODO add your handling code here:
+            TelaGerenciarEstoque GEst = new TelaGerenciarEstoque();
+            GEst.show();
+
+
+    }//GEN-LAST:event_JEstoqueMouseClicked
+
+    private void JFolhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JFolhaMouseClicked
+        // TODO add your handling code here:
+        TelaGerenciarFolhaPagamento GFolha = new TelaGerenciarFolhaPagamento();
+        GFolha.show();
+    }//GEN-LAST:event_JFolhaMouseClicked
 
     /**
      * @param args the command line arguments

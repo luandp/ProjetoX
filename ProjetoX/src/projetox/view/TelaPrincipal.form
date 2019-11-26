@@ -14,6 +14,7 @@
                 <Property name="text" type="java.lang.String" value="Carro"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JCadCarroMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JCadCarroActionPerformed"/>
               </Events>
             </MenuItem>
@@ -63,6 +64,7 @@
             <Property name="text" type="java.lang.String" value="Estoque"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JEstoqueMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JEstoqueActionPerformed"/>
           </Events>
         </Menu>
@@ -71,6 +73,7 @@
             <Property name="text" type="java.lang.String" value="Folha de Pagamento"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JFolhaMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JFolhaActionPerformed"/>
           </Events>
         </Menu>
@@ -88,6 +91,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Sistema ProjetoX - Loca&#xe7;&#xe3;o e Venda de Carros"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="JMenu"/>
