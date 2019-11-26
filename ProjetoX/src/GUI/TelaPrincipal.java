@@ -161,11 +161,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void JFolhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFolhaActionPerformed
         //chamar tela Gerenciar Folha
     }//GEN-LAST:event_JFolhaActionPerformed
-/*
+
     private void JSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JSairActionPerformed
 
     }//GEN-LAST:event_JSairActionPerformed
-*/
+
     private void JSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JSairMouseClicked
         Runtime.getRuntime().exit(0); 
         TelaLogin tl = new  TelaLogin();
