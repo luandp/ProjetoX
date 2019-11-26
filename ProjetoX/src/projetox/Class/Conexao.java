@@ -23,7 +23,7 @@ public class Conexao {
         public Statement Abrir() throws Exception{
             try {
                 String nomedoarquivo = "db";
-                String tipodoarquivo = ".mdb";
+                String tipodoarquivo = ".accdb";
                 String tipodeconexao = "jdbc:ucanaccess://";
                 conexao = DriverManager.getConnection( tipodeconexao + nomedoarquivo + tipodoarquivo );
                 return conexao.createStatement();

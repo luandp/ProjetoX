@@ -37,6 +37,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         JOpeVendas = new javax.swing.JMenuItem();
         JEstoque = new javax.swing.JMenu();
         JFolha = new javax.swing.JMenu();
+        jVariaveis = new javax.swing.JMenu();
         JSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,6 +121,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         JMenu.add(JFolha);
+
+        jVariaveis.setText("Variaveis");
+        jVariaveis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jVariaveisMouseClicked(evt);
+            }
+        });
+        JMenu.add(jVariaveis);
 
         JSair.setText("Sair");
         JSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -220,6 +229,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         GFolha.show();
     }//GEN-LAST:event_JFolhaMouseClicked
 
+    private void jVariaveisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jVariaveisMouseClicked
+        // TODO add your handling code here:
+        TelaGerenciarVariaveisSistema TGV = new TelaGerenciarVariaveisSistema();
+        TGV.show();
+    }//GEN-LAST:event_jVariaveisMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -267,5 +282,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem JOpeVendas;
     private javax.swing.JMenu JOperacao;
     private javax.swing.JMenu JSair;
+    private javax.swing.JMenu jVariaveis;
     // End of variables declaration//GEN-END:variables
 }
