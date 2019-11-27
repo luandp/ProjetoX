@@ -71,7 +71,7 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
         JBtnRemover.setText("Remover");
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
-        JBtnCadastrar.setText("Cadastrar");
+        JBtnCadastrar.setText("Novo Funcionário");
         JBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBtnCadastrarActionPerformed(evt);

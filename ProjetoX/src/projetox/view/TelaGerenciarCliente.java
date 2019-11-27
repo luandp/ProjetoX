@@ -68,7 +68,7 @@ public class TelaGerenciarCliente extends javax.swing.JFrame {
         });
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
-        JBtnCadastrar.setText("Cadastrar");
+        JBtnCadastrar.setText("Novo Cliente");
 
         JBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/search.png"))); // NOI18N
         JBtnBuscar.setText("Buscar");

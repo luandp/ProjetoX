@@ -63,7 +63,7 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
         JBtnRemover.setText("Remover");
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
-        JBtnCadastrar.setText("Cadastrar");
+        JBtnCadastrar.setText("Novo Carro");
 
         jLabelNome.setText("Nome");
 

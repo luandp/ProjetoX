@@ -74,7 +74,7 @@ public class TelaGerenciarEstoque extends javax.swing.JFrame {
         JBtnRemover.setText("Remover");
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
-        JBtnCadastrar.setText("Cadastrar");
+        JBtnCadastrar.setText("Adicionar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
