@@ -27,6 +27,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         JMenu = new javax.swing.JMenuBar();
         JCadastrar = new javax.swing.JMenu();
         JCadCarro = new javax.swing.JMenuItem();
@@ -40,11 +42,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jVariaveis = new javax.swing.JMenu();
         JSair = new javax.swing.JMenu();
 
+        jLabel1.setText("jLabel1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema ProjetoX - Locação e Venda de Carros");
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Logo Menor.png"))); // NOI18N
+
+        JCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/gear.png"))); // NOI18N
         JCadastrar.setText("Gerenciar");
 
+        JCadCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/car.png"))); // NOI18N
         JCadCarro.setText("Carro");
         JCadCarro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -58,6 +66,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         JCadastrar.add(JCadCarro);
 
+        JCadCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Cliente.png"))); // NOI18N
         JCadCliente.setText("Cliente");
         JCadCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +75,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         JCadastrar.add(JCadCliente);
 
+        JCadFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Funcionario.png"))); // NOI18N
         JCadFuncionario.setText("Funcionário");
         JCadFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,8 +86,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         JMenu.add(JCadastrar);
 
+        JOperacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/money.png"))); // NOI18N
         JOperacao.setText("Operação");
 
+        JOpeAluguel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Alugar.png"))); // NOI18N
         JOpeAluguel.setText("Aluguel...");
         JOpeAluguel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +98,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         JOperacao.add(JOpeAluguel);
 
+        JOpeVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Venda.png"))); // NOI18N
         JOpeVendas.setText("Vendas...");
         JOpeVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +109,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         JMenu.add(JOperacao);
 
+        JEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/warehouse.png"))); // NOI18N
         JEstoque.setText("Estoque");
         JEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -109,6 +123,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         JMenu.add(JEstoque);
 
+        JFolha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/bank.png"))); // NOI18N
         JFolha.setText("Folha de Pagamento");
         JFolha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -122,6 +137,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         JMenu.add(JFolha);
 
+        jVariaveis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/browser.png"))); // NOI18N
         jVariaveis.setText("Variaveis");
         jVariaveis.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -130,6 +146,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         JMenu.add(jVariaveis);
 
+        JSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/logout.png"))); // NOI18N
         JSair.setText("Sair");
         JSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -149,11 +166,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jLabel2)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(jLabel2)
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,6 +305,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem JOpeVendas;
     private javax.swing.JMenu JOperacao;
     private javax.swing.JMenu JSair;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jVariaveis;
     // End of variables declaration//GEN-END:variables
 }
