@@ -180,6 +180,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JCadCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCadCarroActionPerformed
