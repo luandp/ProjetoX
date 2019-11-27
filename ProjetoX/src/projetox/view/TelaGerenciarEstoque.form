@@ -96,6 +96,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="JBtnBuscar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/projetox/view/Imagens/search.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
@@ -130,6 +133,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="JBtnAtualizar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/projetox/view/Imagens/loading.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Atualizar"/>
       </Properties>
       <Events>
@@ -138,11 +144,17 @@
     </Component>
     <Component class="javax.swing.JButton" name="JBtnRemover">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/projetox/view/Imagens/delete.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Remover"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="JBtnCadastrar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/projetox/view/Imagens/Pr&#xf3;ximo.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Cadastrar"/>
       </Properties>
     </Component>

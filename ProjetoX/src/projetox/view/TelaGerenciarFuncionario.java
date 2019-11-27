@@ -41,6 +41,7 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
 
         jLabelNome.setText("Nome");
 
+        JBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/search.png"))); // NOI18N
         JBtnBuscar.setText("Buscar");
         JBtnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +59,7 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        JBtnAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/loading.png"))); // NOI18N
         JBtnAtualizar.setText("Atualizar");
         JBtnAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,8 +67,10 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
             }
         });
 
+        JBtnRemover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/delete.png"))); // NOI18N
         JBtnRemover.setText("Remover");
 
+        JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
         JBtnCadastrar.setText("Cadastrar");
         JBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,10 +87,10 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JBtnRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JBtnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                            .addComponent(JBtnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JBtnAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

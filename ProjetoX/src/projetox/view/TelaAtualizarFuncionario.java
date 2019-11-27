@@ -38,6 +38,7 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
         jTextNome = new javax.swing.JTextField();
         jTextCPF = new javax.swing.JTextField();
         jTextSenha = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Atualizar Funcionário - ProjetoX");
@@ -61,15 +62,14 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
 
         JBtnAtualizar.setText("Atualizar");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Logo Menor.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JBtnAtualizar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -80,7 +80,7 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelCargo)
                                 .addGap(161, 161, 161)
-                                .addComponent(jComboCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jComboCargo, 0, 171, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelNome)
                                 .addGap(24, 24, 24)
@@ -92,13 +92,22 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelSenha)
                                 .addGap(20, 20, 20)
-                                .addComponent(jTextSenha)))))
+                                .addComponent(jTextSenha))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JBtnAtualizar)))
                 .addGap(30, 30, 30))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLabelNome)
                     .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -120,7 +129,7 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
                     .addComponent(JLabelSalario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JBtnAtualizar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -173,6 +182,7 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel JLabelSalario;
     private javax.swing.JLabel JLabelSenha;
     private javax.swing.JComboBox<String> jComboCargo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextCPF;
     private javax.swing.JTextField jTextNome;
     private javax.swing.JTextField jTextSalario;
