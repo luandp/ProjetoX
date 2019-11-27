@@ -36,7 +36,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         jTextCPF = new javax.swing.JTextField();
         jTextSenha = new javax.swing.JPasswordField();
         jTextSalario = new javax.swing.JTextField();
-        jComboCargo = new javax.swing.JComboBox<>();
+        jComboCargo = new javax.swing.JComboBox<String>();
         JBtnCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -52,9 +52,14 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
 
         JLabelSalario.setText("Salário");
 
-        jComboCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Comissionado", "Gerente" }));
+        jComboCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Funcionário", "Comissionado", "Gerente" }));
 
         JBtnCadastrar.setText("Cadastrar");
+        JBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnCadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,6 +125,10 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
