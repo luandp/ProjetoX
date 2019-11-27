@@ -39,6 +39,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         jComboCargo = new javax.swing.JComboBox<String>();
         JBtnCadastrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar Funcionário - ProjetoX");
@@ -54,6 +55,11 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         JLabelSalario.setText("Salário");
 
         jComboCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Funcionário", "Comissionado", "Gerente" }));
+        jComboCargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboCargoActionPerformed(evt);
+            }
+        });
 
         JBtnCadastrar.setText("Cadastrar");
         JBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +67,10 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                 JBtnCadastrarActionPerformed(evt);
             }
         });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Logo Menor.png"))); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Logo Menor.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,6 +147,10 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
+    private void jComboCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboCargoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboCargoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -181,6 +195,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel JLabelSenha;
     private javax.swing.JComboBox<String> jComboCargo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextCPF;
     private javax.swing.JTextField jTextNome;
     private javax.swing.JTextField jTextSalario;
