@@ -69,6 +69,11 @@ public class TelaGerenciarCliente extends javax.swing.JFrame {
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
         JBtnCadastrar.setText("Novo Cliente");
+        JBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnCadastrarActionPerformed(evt);
+            }
+        });
 
         JBtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/search.png"))); // NOI18N
         JBtnBuscar.setText("Buscar");
@@ -140,6 +145,15 @@ public class TelaGerenciarCliente extends javax.swing.JFrame {
     private void JBtnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnRemoverActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBtnRemoverActionPerformed
+
+    private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
+         TelaCadastrarCliente cad = new TelaCadastrarCliente();
+         cad.show();
+        
+        
+        
+        
+    }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments

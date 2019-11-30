@@ -16,10 +16,21 @@ public class Facade_Cliente {
     
     Controller_Cliente control = new Controller_Cliente();
     
-    public String Cadastrar_Cliente(String nome,int idade, ){
-    
-        //JTextNome,JTextIdade,JTextCPF,JTextRua,JTextNumero,JTextCEP,JTextBairro,JTextEstado,JTextTelefone
-        return "";
+    public String Cadastrar_Cliente(String nome, String cpf, String idade, String logradouro, String n_casa, String cep, String bairro, String cidade, String estado, String telefone){
+      //public String Cadastrar_Cliente(){     
+        return "Cliente Cadastrado com Sucesso!"
+                + "\nNome:"+nome+""
+                + "\nCPF:"+cpf+""
+                + "\nIdade:"+idade+""
+                + "\nLogradouro:"+logradouro+""
+                + "\nN da Casa:"+n_casa+""
+                + "\nCEP:"+cep+""
+                + "\nBairro:"+bairro+""
+                + "\nCidade:"+cidade+""
+                + "\nEstado:"+estado+""
+                + "\nTelefone:"+telefone+""
+                ;
+        
     }
     
     public ArrayList Listar_Cliente(){
