@@ -2,29 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< Upstream, based on origin/master
         <group/>
-=======
-        <group>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Devolucao.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Pesquisa_Filmes.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Atualizar_Filme.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/projetox/Class/Cliente.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Cadastrar_Filme.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/projetox/ProjetoX.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Locacao.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Cadastrar_Usuario.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Login.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Gerenciar_Filme.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Cadastrar_Cliente.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Gerenciar_Cliente.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Gerenciar_Usuario.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Pesquisa_CLiente.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Atualizar_Cliente.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Atualizar_Usuario.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Devolucao_Continuacao.java</file>
-            <file>file:/C:/Users/Matheus%20Andrade/Documents/NetBeansProjects/Projeto%20X/ProjetoX/ProjetoX/src/GUI/Tela_Principal.java</file>
-        </group>
->>>>>>> 34f5de2 Tirando Action Performed
     </open-files>
 </project-private>
