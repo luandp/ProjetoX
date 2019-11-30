@@ -14,4 +14,18 @@ import projetox.Model.Model_Funcionario;
  */
 public class Controller_Funcionario {
    
+    
+    public String Validar_Cadastro(){
+    
+        return "";
+    }
+    
+    public String Validar_Atualizar(){
+        
+        return "";
+    }
+    
+    public String ValidarBusca(){
+        return "";
+    }
 }

@@ -14,5 +14,17 @@ import projetox.Model.Model_Carro;
  */
 public class Controller_Carro {
     
+    public String Validar_Cadastro(){
     
+        return "";
+    }
+    
+    public String Validar_Atualizar(){
+        
+        return "";
+    }
+    
+    public String ValidarBusca(){
+        return "";
+    }
 }

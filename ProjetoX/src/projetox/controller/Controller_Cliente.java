@@ -11,4 +11,19 @@ package projetox.controller;
  */
 public class Controller_Cliente {
     
+    public String Validar_Cadastro(){
+    
+        return "";
+    }
+    
+    public String Validar_Atualizar(){
+        
+        return "";
+    }
+    
+    public String ValidarBusca(){
+        return "";
+    }
+    
+    
 }
