@@ -30,14 +30,14 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
         JLabelNome = new javax.swing.JLabel();
         JLabelCPF = new javax.swing.JLabel();
         JLabelSenha = new javax.swing.JLabel();
-        jTextSalario = new javax.swing.JTextField();
+        JTextSalario = new javax.swing.JTextField();
         JLabelCargo = new javax.swing.JLabel();
         JLabelSalario = new javax.swing.JLabel();
-        jComboCargo = new javax.swing.JComboBox<>();
+        JTextCargo = new javax.swing.JComboBox<String>();
         JBtnAtualizar = new javax.swing.JButton();
-        jTextNome = new javax.swing.JTextField();
-        jTextCPF = new javax.swing.JTextField();
-        jTextSenha = new javax.swing.JPasswordField();
+        JTextNome = new javax.swing.JTextField();
+        JTextCPF = new javax.swing.JTextField();
+        JTextSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -53,10 +53,10 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
 
         JLabelSalario.setText("Salário");
 
-        jComboCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Comissionado", "Gerente" }));
-        jComboCargo.addActionListener(new java.awt.event.ActionListener() {
+        JTextCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Funcionário", "Comissionado", "Gerente" }));
+        JTextCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboCargoActionPerformed(evt);
+                JTextCargoActionPerformed(evt);
             }
         });
 
@@ -76,23 +76,23 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelSalario)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextSalario))
+                                .addComponent(JTextSalario))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelCargo)
                                 .addGap(161, 161, 161)
-                                .addComponent(jComboCargo, 0, 171, Short.MAX_VALUE))
+                                .addComponent(JTextCargo, 0, 171, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelNome)
                                 .addGap(24, 24, 24)
-                                .addComponent(jTextNome))
+                                .addComponent(JTextNome))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelCPF)
                                 .addGap(32, 32, 32)
-                                .addComponent(jTextCPF))
+                                .addComponent(JTextCPF))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelSenha)
                                 .addGap(20, 20, 20)
-                                .addComponent(jTextSenha))))
+                                .addComponent(JTextSenha))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(JBtnAtualizar)))
@@ -110,22 +110,22 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLabelNome)
-                    .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLabelCPF)
-                    .addComponent(jTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLabelSenha)
-                    .addComponent(jTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLabelCargo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLabelSalario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JBtnAtualizar)
@@ -136,9 +136,9 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboCargoActionPerformed
+    private void JTextCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextCargoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboCargoActionPerformed
+    }//GEN-LAST:event_JTextCargoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,11 +182,11 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel JLabelNome;
     private javax.swing.JLabel JLabelSalario;
     private javax.swing.JLabel JLabelSenha;
-    private javax.swing.JComboBox<String> jComboCargo;
+    private javax.swing.JTextField JTextCPF;
+    private javax.swing.JComboBox<String> JTextCargo;
+    private javax.swing.JTextField JTextNome;
+    private javax.swing.JTextField JTextSalario;
+    private javax.swing.JPasswordField JTextSenha;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextCPF;
-    private javax.swing.JTextField jTextNome;
-    private javax.swing.JTextField jTextSalario;
-    private javax.swing.JPasswordField jTextSenha;
     // End of variables declaration//GEN-END:variables
 }

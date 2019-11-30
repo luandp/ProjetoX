@@ -31,24 +31,24 @@ public class TelaAluguel extends javax.swing.JFrame {
     private void initComponents() {
 
         jBFinalizar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jTextDatainicial = new javax.swing.JLabel();
+        JTextDatafinaj = new javax.swing.JLabel();
+        JTextDatainicial = new javax.swing.JLabel();
         jPanelFilme1 = new javax.swing.JPanel();
-        jNomeFil1 = new javax.swing.JLabel();
-        jTextNomeFilme1 = new javax.swing.JTextField();
+        jTextModelo = new javax.swing.JLabel();
+        JTextModelo = new javax.swing.JTextField();
         jBPesquisarFilmes1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         Valor = new javax.swing.JLabel();
-        datadevolucao = new com.toedter.calendar.JDateChooser();
+        JTextDatafinal = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
         jPanelCliente = new javax.swing.JPanel();
         jMatricula = new javax.swing.JLabel();
-        jNomeCliente = new javax.swing.JLabel();
-        jTextNomeclien = new javax.swing.JTextField();
-        jBPesquisarCliente = new javax.swing.JButton();
+        jtextnome = new javax.swing.JLabel();
+        JTextNome = new javax.swing.JTextField();
+        JBtnPesquisarCliente = new javax.swing.JButton();
         CPF = new javax.swing.JLabel();
         JlabelCodigo = new javax.swing.JLabel();
         jValorTotal = new javax.swing.JLabel();
@@ -66,15 +66,15 @@ public class TelaAluguel extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Data de Locação :");
+        jTextDatainicial.setText("Data de Locação :");
 
-        jLabel3.setText("Data de Devolução :");
+        JTextDatafinaj.setText("Data de Devolução :");
 
-        jLabel2.setText("Data");
+        JTextDatainicial.setText("Data");
 
         jPanelFilme1.setBorder(javax.swing.BorderFactory.createTitledBorder("Carro"));
 
-        jNomeFil1.setText("Nome:");
+        jTextModelo.setText("Modelo:");
 
         jBPesquisarFilmes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/search.png"))); // NOI18N
         jBPesquisarFilmes1.setText("Pesquisar");
@@ -103,9 +103,9 @@ public class TelaAluguel extends javax.swing.JFrame {
             .addGroup(jPanelFilme1Layout.createSequentialGroup()
                 .addGroup(jPanelFilme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFilme1Layout.createSequentialGroup()
-                        .addComponent(jNomeFil1)
+                        .addComponent(jTextModelo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextNomeFilme1)
+                        .addComponent(JTextModelo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBPesquisarFilmes1))
                     .addComponent(jScrollPane2))
@@ -115,8 +115,8 @@ public class TelaAluguel extends javax.swing.JFrame {
             jPanelFilme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFilme1Layout.createSequentialGroup()
                 .addGroup(jPanelFilme1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jNomeFil1)
-                    .addComponent(jTextNomeFilme1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextModelo)
+                    .addComponent(JTextModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBPesquisarFilmes1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -152,21 +152,21 @@ public class TelaAluguel extends javax.swing.JFrame {
 
         jPanelCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
 
-        jMatricula.setText("Matricula :");
+        jMatricula.setText("CPF:");
 
-        jNomeCliente.setText("Nome:");
+        jtextnome.setText("Nome:");
 
-        jTextNomeclien.addActionListener(new java.awt.event.ActionListener() {
+        JTextNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNomeclienActionPerformed(evt);
+                JTextNomeActionPerformed(evt);
             }
         });
 
-        jBPesquisarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/search.png"))); // NOI18N
-        jBPesquisarCliente.setText("Pesquisar");
-        jBPesquisarCliente.addActionListener(new java.awt.event.ActionListener() {
+        JBtnPesquisarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/search.png"))); // NOI18N
+        JBtnPesquisarCliente.setText("Pesquisar");
+        JBtnPesquisarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBPesquisarClienteActionPerformed(evt);
+                JBtnPesquisarClienteActionPerformed(evt);
             }
         });
 
@@ -181,20 +181,20 @@ public class TelaAluguel extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CPF)
                 .addGap(76, 76, 76)
-                .addComponent(jNomeCliente)
+                .addComponent(jtextnome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextNomeclien)
+                .addComponent(JTextNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBPesquisarCliente)
+                .addComponent(JBtnPesquisarCliente)
                 .addContainerGap())
         );
         jPanelClienteLayout.setVerticalGroup(
             jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jMatricula)
-                .addComponent(jBPesquisarCliente)
-                .addComponent(jNomeCliente)
-                .addComponent(jTextNomeclien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBtnPesquisarCliente)
+                .addComponent(jtextnome)
+                .addComponent(JTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(CPF)
                 .addComponent(JlabelCodigo))
         );
@@ -219,12 +219,12 @@ public class TelaAluguel extends javax.swing.JFrame {
                                 .addComponent(jBFinalizar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(JTextDatafinaj)
+                                    .addComponent(jTextDatainicial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(datadevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(JTextDatainicial)
+                                    .addComponent(JTextDatafinal, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(309, 309, 309)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton1)
@@ -251,8 +251,8 @@ public class TelaAluguel extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2))
+                        .addComponent(jTextDatainicial)
+                        .addComponent(JTextDatainicial))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jValorTotal, javax.swing.GroupLayout.Alignment.LEADING)))
@@ -260,8 +260,8 @@ public class TelaAluguel extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(datadevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(JTextDatafinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JTextDatafinaj, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jBFinalizar)
                 .addContainerGap())
@@ -283,13 +283,13 @@ public class TelaAluguel extends javax.swing.JFrame {
      
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jBPesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarClienteActionPerformed
+    private void JBtnPesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnPesquisarClienteActionPerformed
 
-    }//GEN-LAST:event_jBPesquisarClienteActionPerformed
+    }//GEN-LAST:event_JBtnPesquisarClienteActionPerformed
 
-    private void jTextNomeclienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNomeclienActionPerformed
+    private void JTextNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextNomeActionPerformed
 
-    }//GEN-LAST:event_jTextNomeclienActionPerformed
+    }//GEN-LAST:event_JTextNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,33 +329,27 @@ public class TelaAluguel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CPF;
+    private javax.swing.JButton JBtnPesquisarCliente;
+    private javax.swing.JLabel JTextDatafinaj;
+    private com.toedter.calendar.JDateChooser JTextDatafinal;
+    private javax.swing.JLabel JTextDatainicial;
+    private javax.swing.JTextField JTextModelo;
+    private javax.swing.JTextField JTextNome;
     private javax.swing.JLabel JlabelCodigo;
     private javax.swing.JLabel Valor;
-    private com.toedter.calendar.JDateChooser datadevolucao;
     private javax.swing.JButton jBFinalizar;
-    private javax.swing.JButton jBPesquisarCliente;
-    private javax.swing.JButton jBPesquisarFilmes;
     private javax.swing.JButton jBPesquisarFilmes1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jMatricula;
-    private javax.swing.JLabel jNomeCliente;
-    private javax.swing.JLabel jNomeFil;
-    private javax.swing.JLabel jNomeFil1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelCliente;
-    private javax.swing.JPanel jPanelFilme;
     private javax.swing.JPanel jPanelFilme1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextNomeFilme;
-    private javax.swing.JTextField jTextNomeFilme1;
-    private javax.swing.JTextField jTextNomeclien;
+    private javax.swing.JLabel jTextDatainicial;
+    private javax.swing.JLabel jTextModelo;
     private javax.swing.JLabel jValorTotal;
+    private javax.swing.JLabel jtextnome;
     // End of variables declaration//GEN-END:variables
 }
