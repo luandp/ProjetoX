@@ -27,27 +27,27 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        datadevolucao = new javax.swing.JLabel();
+        JTextDataDevolucao = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        BAplicarM = new javax.swing.JButton();
+        JBtnMulta = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        JTextCpf = new javax.swing.JLabel();
+        JTextNome = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        datalo = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jbvalor = new javax.swing.JLabel();
+        JTextDataLocacao = new javax.swing.JLabel();
+        JBtnDevolucao = new javax.swing.JButton();
+        JTextValorTotal = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Devolução");
 
-        datadevolucao.setText("jLabel9");
+        JTextDataDevolucao.setText("jLabel9");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,22 +66,22 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
 
         jLabel6.setText("Data da Devolução:");
 
-        BAplicarM.setText("Aplicar Multa");
-        BAplicarM.addActionListener(new java.awt.event.ActionListener() {
+        JBtnMulta.setText("Aplicar Multa");
+        JBtnMulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BAplicarMActionPerformed(evt);
+                JBtnMultaActionPerformed(evt);
             }
         });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
 
-        jLabel1.setText("Matricula");
+        jLabel1.setText("CPF:");
 
         jLabel8.setText("Nome:");
 
-        jLabel9.setText("jLabel3");
+        JTextCpf.setText("jLabel3");
 
-        jLabel10.setText("jLabel4");
+        JTextNome.setText("jLabel4");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -90,11 +90,11 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel9)
+                .addComponent(JTextCpf)
                 .addGap(69, 69, 69)
                 .addComponent(jLabel8)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel10)
+                .addComponent(JTextNome)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -104,25 +104,25 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9))
+                        .addComponent(JTextCpf))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
-                        .addComponent(jLabel10))))
+                        .addComponent(JTextNome))))
         );
 
         jLabel11.setText("Data da Locação:");
 
-        datalo.setText("jLabel9");
+        JTextDataLocacao.setText("jLabel9");
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
-        jButton2.setText("Devolução");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        JBtnDevolucao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
+        JBtnDevolucao.setText("Devolução");
+        JBtnDevolucao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                JBtnDevolucaoActionPerformed(evt);
             }
         });
 
-        jbvalor.setText("jLabel9");
+        JTextValorTotal.setText("jLabel9");
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Logo Menor.png"))); // NOI18N
 
@@ -135,9 +135,9 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BAplicarM)
+                        .addComponent(JBtnMulta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addComponent(JBtnDevolucao))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,9 +148,9 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
                                     .addComponent(jLabel5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(datalo)
-                                    .addComponent(jbvalor)
-                                    .addComponent(datadevolucao))))
+                                    .addComponent(JTextDataLocacao)
+                                    .addComponent(JTextValorTotal)
+                                    .addComponent(JTextDataDevolucao))))
                         .addGap(0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -170,19 +170,19 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jbvalor, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JTextValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(datalo))
+                    .addComponent(JTextDataLocacao))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(datadevolucao))
+                    .addComponent(JTextDataDevolucao))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BAplicarM)
-                    .addComponent(jButton2))
+                    .addComponent(JBtnMulta)
+                    .addComponent(JBtnDevolucao))
                 .addGap(21, 21, 21))
         );
 
@@ -190,14 +190,14 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BAplicarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BAplicarMActionPerformed
+    private void JBtnMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnMultaActionPerformed
 
-    }//GEN-LAST:event_BAplicarMActionPerformed
+    }//GEN-LAST:event_JBtnMultaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void JBtnDevolucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnDevolucaoActionPerformed
 
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_JBtnDevolucaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,26 +235,21 @@ public class TelaDevolucao2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BAplicarM;
-    private javax.swing.JLabel datadevolucao;
-    private javax.swing.JLabel datalo;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton JBtnDevolucao;
+    private javax.swing.JButton JBtnMulta;
+    private javax.swing.JLabel JTextCpf;
+    private javax.swing.JLabel JTextDataDevolucao;
+    private javax.swing.JLabel JTextDataLocacao;
+    private javax.swing.JLabel JTextNome;
+    private javax.swing.JLabel JTextValorTotal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel jbvalor;
     // End of variables declaration//GEN-END:variables
 }
