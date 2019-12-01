@@ -6,6 +6,8 @@
 package projetox.facade;
 
 import java.util.ArrayList;
+import projetox.Class.Cliente;
+import projetox.Class.Funcionario;
 import projetox.controller.Controller_Cliente;
 
 /**
@@ -17,32 +19,7 @@ public class Facade_Cliente {
     Controller_Cliente control = new Controller_Cliente();
     
     public String Cadastrar_Cliente(String nome, String cpf, String idade, String logradouro, String n_casa, String cep, String bairro, String cidade, String estado, String telefone) throws Exception{
-      //recebe variaveis
-     String retorno = ""; 
-      
-     
-      //chama controller
-      retorno = control.Validar_Cadastro(nome, cpf, idade, logradouro, n_casa, cep, bairro, cidade, estado, telefone);
-        
-        
-        
-        
-        
-        
-        return retorno;
-      /*  return "Cliente Cadastrado com Sucesso!"
-                + "\nNome:"+nome+""
-                + "\nCPF:"+cpf+""
-                + "\nIdade:"+idade+""
-                + "\nLogradouro:"+logradouro+""
-                + "\nN da Casa:"+n_casa+""
-                + "\nCEP:"+cep+""
-                + "\nBairro:"+bairro+""
-                + "\nCidade:"+cidade+""
-                + "\nEstado:"+estado+""
-                + "\nTelefone:"+telefone+""
-                ;*/
-        
+      return control.Validar_Cadastro(nome, cpf, idade, logradouro, n_casa, cep, bairro, cidade, estado, telefone);
     }
     
     public ArrayList Listar_Cliente(){
@@ -50,7 +27,10 @@ public class Facade_Cliente {
         ArrayList<String> Clientes  = new ArrayList<>();
         return Clientes;
     }
-    
+        public ArrayList Listar_Clientes(String nome) throws Exception{
+        ArrayList<Cliente> Clientes  = new ArrayList<>();
+        return control.ValidarBusca(nome);
+    }
     public String Excluir_Cliente(){
     
         return "";

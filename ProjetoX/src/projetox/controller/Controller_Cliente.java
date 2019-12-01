@@ -5,7 +5,10 @@
  */
 package projetox.controller;
 
+import java.util.ArrayList;
 import projetox.Class.Cliente;
+import projetox.Class.Cliente;
+import projetox.Model.Model_Cliente;
 import projetox.Model.Model_Cliente;
 
 /**
@@ -13,38 +16,26 @@ import projetox.Model.Model_Cliente;
  * @author Luan Paulo
  */
 public class Controller_Cliente {
-    
+   
     Model_Cliente model = new Model_Cliente();
     
-    public String Validar_Cadastro(String nome, String cpf, String idade, String logradouro, String n_casa, String cep, String bairro, String cidade, String estado, String telefone) throws Exception{
-    
-        //fazer validacoes aqui
-        //Transformar Variaveis
+    public String Validar_Cadastro(String nome, String cpf, String idade,String logradouro,String n_casa,String cep,String bairro,String cidade,String estado,String telefone){
         
-        //nome é String
-        //CPF é String
-        int id = 0;
-        int idadeConvertida = Integer.parseInt(idade);
-        //Logradouro é String
-        int n_casaConvertido = Integer.parseInt(n_casa);
-        int cepConvertido = Integer.parseInt(cep);
-        //Bairro é String
-        //Cidade é String
-        //Estado é String
-        //Telefone é String
+            //fazer validacoes aqui
+            //Transformar Variaveis
+            //int idade;
+            int idadeConvertido = Integer.parseInt(idade);
+            //String logradouro;
+            //int n_casa;
+            int n_casaConvertido = Integer.parseInt(n_casa);
+            //String cep;
+            //String bairro;
+            //String cidade;
+            //String estado;
+            //String telefone;
         
-        //int idade, String logradouro, int n_casa, int cep, String bairro, String cidade, String estado, String telefone, int id, String nome, String CPF;
-        
-        String retorno = "";
-        //criar classe cliente e popular dados
-        //int idade, String logradouro, int n_casa, int cep, String bairro, String cidade, String estado, String telefone, int id, String nome, String CPF
-        Cliente novo = new Cliente(id, nome, cpf, idadeConvertida, logradouro, n_casaConvertido, cepConvertido, bairro, cidade, estado, telefone);
-        
-        
-        //chamar model
-        retorno = model.Cadastrar_Cliente(novo);
-        
-        return retorno;
+        Cliente novo = new Cliente(idadeConvertido, nome, cpf, idadeConvertido, logradouro, n_casaConvertido, cep, bairro, cidade, estado, telefone);
+        return model.Cadastrar_Cliente(novo);
     }
     
     public String Validar_Atualizar(){
@@ -52,9 +43,85 @@ public class Controller_Cliente {
         return "";
     }
     
-    public String ValidarBusca(){
+    public ArrayList<Cliente> ValidarBusca(String nome)throws Exception
+    {
+        ArrayList<Cliente> clientes = new ArrayList();
+        clientes = model.buscar_Cliente(nome);
+        return clientes;
+    }
+    public String verificarRemocao(int id,String cargo)throws Exception
+    {
+        if(id==0)
+        {
+            throw  new Exception("Informe um usuário para ser excluido");
+        }
+        boolean retorno;
+        retorno = model.veirificarRemocao(cargo);
+        if(retorno == true)
+        {
+            throw  new Exception("Você é o último usuário Administrador, por isso não pode ser removido");
+        }
+        model.remover_Cliente(id);
         return "";
+               
     }
     
-    
+    public String verificaAtualizacao()throws Exception
+    {
+       
+       boolean retorno = true;
+       retorno = model.veirificarAtualizacao();
+       if(retorno == true)
+       {
+           return "Você não pode atualizar o último Administrador para funcionáio";
+       }
+       return "ok";
+    }
+     
+    /*
+        public void validarAtualizacao(Cliente novo,int id,String login)throws Exception
+    {
+        if(novo.getNome().trim().equals(""))
+        {
+            throw  new Exception("Informe o nome do funcionario");
+            
+        }
+        if(novo.getNome().trim().length()<10)
+        {
+            throw  new Exception("Informe o nome completo do funcionario ");
+            
+        }
+        if(novo.getLogin().trim().equals(""))
+        {
+            throw  new Exception("Informe o Login do funcionario");
+           
+        }
+        if(novo.getLogin().trim().length()<4)
+        {
+           throw  new Exception("Informe um Login válido");
+           
+        }
+        if(novo.getSenha().trim().equals(""))
+        {
+           throw  new Exception("Informe a senha do funcionario");
+           
+        }
+        if(novo.getSenha().trim().length()<4)
+        {
+           throw  new Exception("A senha deve ter no minimo 4 caracteres ");
+            
+        }
+        if(!login.equals(novo.getLogin()))
+        {
+            boolean retorno;
+            retorno = model.verificarLoginDisponivel(novo.getLogin());
+            if(retorno == true)
+            {
+                throw  new Exception("Já existe um usuário com esse Login");
+            }
+        }
+            model.atualizar_Cliente(novo,id);
+            
+    }
+   */
 }

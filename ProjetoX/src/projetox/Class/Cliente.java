@@ -14,13 +14,25 @@ public class Cliente extends Pessoa{
     int idade;
     String logradouro;
     int n_casa;
-    int cep;
+    String cep;
     String bairro;
     String cidade;
     String estado;
     String telefone;
     //nome, cpf, idadeConvertida, logradouro, n_casaConvertido, cepConvertido, bairro, cidade, estado, telefone
-    public Cliente(int id, String nome, String CPF, int idade, String logradouro, int n_casa, int cep, String bairro,String cidade,String estado,String telefone) {
+    public Cliente(){
+        super(0, "", "");
+        this.idade = 0;
+        this.logradouro = "";
+        this.n_casa = 0;
+        this.cep = "";
+        this.bairro = "";
+        this.cidade = "";
+        this.estado = "";
+        this.telefone = "";
+        
+    }
+    public Cliente(int id, String nome, String CPF, int idade, String logradouro, int n_casa, String cep, String bairro,String cidade,String estado,String telefone) {
         super(id, nome, CPF);
         this.idade = idade;
         this.logradouro = logradouro;
@@ -61,11 +73,11 @@ public class Cliente extends Pessoa{
         this.n_casa = n_casa;
     }
 
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
