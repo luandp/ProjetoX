@@ -16,7 +16,7 @@ public class Facade_Cliente {
     
     Controller_Cliente control = new Controller_Cliente();
     
-    public String Cadastrar_Cliente(String nome, String cpf, String idade, String logradouro, String n_casa, String cep, String bairro, String cidade, String estado, String telefone){
+    public String Cadastrar_Cliente(String nome, String cpf, String idade, String logradouro, String n_casa, String cep, String bairro, String cidade, String estado, String telefone) throws Exception{
       //recebe variaveis
      String retorno = ""; 
       

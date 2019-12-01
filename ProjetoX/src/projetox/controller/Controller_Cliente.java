@@ -16,7 +16,7 @@ public class Controller_Cliente {
     
     Model_Cliente model = new Model_Cliente();
     
-    public String Validar_Cadastro(String nome, String cpf, String idade, String logradouro, String n_casa, String cep, String bairro, String cidade, String estado, String telefone){
+    public String Validar_Cadastro(String nome, String cpf, String idade, String logradouro, String n_casa, String cep, String bairro, String cidade, String estado, String telefone) throws Exception{
     
         //fazer validacoes aqui
         //Transformar Variaveis
