@@ -16,7 +16,7 @@ public class Controller_Funcionario {
    
     Model_Funcionario model = new Model_Funcionario();
     
-    public String Validar_Cadastro(String nome, String cpf, String senha, String cargo, String salario){
+    public String Validar_Cadastro(String nome, String cpf, String senha, String cargo, String salario,String login){
         
         //fazer validacoes aqui
         //Transformar Variaveis
@@ -30,7 +30,7 @@ public class Controller_Funcionario {
         String retorno = "";
         //criar classe cliente e popular dados
         //double salario, String senha, int id, String nome, String CPF, String cargo
-        Funcionario novo = new Funcionario(salarioConvertido, senha, 0, nome, cpf, cargo);
+        Funcionario novo = new Funcionario(salarioConvertido, senha, 0, nome, cpf, cargo,login);
         
         
         //chamar model

@@ -40,10 +40,12 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         jTextCPF = new javax.swing.JTextField();
         jTextSenha = new javax.swing.JPasswordField();
         JTextSalario = new javax.swing.JTextField();
-        JTextCargo = new javax.swing.JComboBox<String>();
+        JTextCargo = new javax.swing.JComboBox<>();
         JBtnCadastrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        JLabelSenha1 = new javax.swing.JLabel();
+        jTextLogin = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar Funcionário - ProjetoX");
@@ -58,7 +60,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
 
         JLabelSalario.setText("Salário");
 
-        JTextCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Funcionário", "Comissionado", "Gerente" }));
+        JTextCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Comissionado", "Gerente" }));
         JTextCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextCargoActionPerformed(evt);
@@ -76,42 +78,45 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Logo Menor.png"))); // NOI18N
 
+        JLabelSenha1.setText("Login");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(360, Short.MAX_VALUE)
                         .addComponent(JBtnCadastrar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JLabelNome)
+                            .addComponent(JLabelCPF))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelCPF)
-                                .addGap(32, 32, 32)
-                                .addComponent(jTextCPF))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(JLabelNome)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(24, 24, 24)
-                                        .addComponent(jLabel1)
-                                        .addGap(0, 37, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jTextNome))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JLabelSenha)
-                                    .addComponent(JLabelCargo)
-                                    .addComponent(JLabelSalario))
-                                .addGap(14, 14, 14)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTextSalario)
-                                    .addComponent(JTextCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextSenha))))))
+                                .addComponent(jLabel1)
+                                .addGap(0, 37, Short.MAX_VALUE))
+                            .addComponent(jTextNome)
+                            .addComponent(jTextCPF)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JLabelSenha)
+                                .addComponent(JLabelCargo)
+                                .addComponent(JLabelSalario))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(JLabelSenha1)
+                                .addGap(2, 2, 2)))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTextCargo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextSenha)
+                            .addComponent(JTextSalario)
+                            .addComponent(jTextLogin))))
                 .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
@@ -128,6 +133,10 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                     .addComponent(JLabelCPF)
                     .addComponent(jTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLabelSenha1))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLabelSenha)
                     .addComponent(jTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -141,7 +150,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                     .addComponent(JLabelSalario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JBtnCadastrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         pack();
@@ -155,12 +164,13 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         String cpf = jTextCPF.getText().trim().trim();
         
         //dados de Funcionario      
+        String login = jTextLogin.getText();
         String senha = jTextSenha.getText();
         String cargo = JTextCargo.getSelectedItem().toString();
         String salario = JTextSalario.getText().trim();
                 
         //chama view
-        String result = fachada.Cadastrar_Funcionario(nome, cpf, senha, cargo, salario);
+        String result = fachada.Cadastrar_Funcionario(nome, cpf, senha, cargo, salario,login);
         JOptionPane.showMessageDialog(this, result);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Nenhum dado pode ser Nulo.\nErro:"+e);
@@ -213,11 +223,13 @@ private final Facade_Funcionario fachada = new Facade_Funcionario();
     private javax.swing.JLabel JLabelNome;
     private javax.swing.JLabel JLabelSalario;
     private javax.swing.JLabel JLabelSenha;
+    private javax.swing.JLabel JLabelSenha1;
     private javax.swing.JComboBox<String> JTextCargo;
     private javax.swing.JTextField JTextSalario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextCPF;
+    private javax.swing.JPasswordField jTextLogin;
     private javax.swing.JTextField jTextNome;
     private javax.swing.JPasswordField jTextSenha;
     // End of variables declaration//GEN-END:variables

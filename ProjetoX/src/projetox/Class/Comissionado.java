@@ -13,8 +13,8 @@ public class Comissionado extends Funcionario{
     
         double comissao;
 
-    public Comissionado(double comissao, double salario, String senha, int id, String nome, String CPF, String cargo) {
-        super(salario, senha, id, nome, CPF, cargo);
+    public Comissionado(double comissao, double salario, String senha, int id, String nome, String CPF, String cargo, String login) {
+        super(salario, senha, id, nome, CPF, cargo,login);
         this.comissao = comissao;
     }
 

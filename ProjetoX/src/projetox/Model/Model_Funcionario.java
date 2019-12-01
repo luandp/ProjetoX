@@ -8,7 +8,6 @@ package projetox.Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import projetox.Class.Funcionario;
 import projetox.Class.Conexao;
 
@@ -72,8 +71,8 @@ public class Model_Funcionario {
         banco.Fechar();
         return funcionarios;
     }
-     
      */
+     
      
      public void remover_Funcionario(int codigo)throws Exception
     {

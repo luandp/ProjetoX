@@ -13,12 +13,20 @@ public class Funcionario extends Pessoa{
         double salario;
         String senha;
         String cargo;
-
-    public Funcionario(double salario, String senha, int id, String nome, String CPF, String cargo) {
+        String login;
+    public Funcionario() {
+        super(0, "", "");
+        this.salario = 0;
+        this.senha = "";
+        this.cargo = "";
+        this.login = "";
+    }
+    public Funcionario(double salario, String senha, int id, String nome, String CPF, String cargo, String login) {
         super(id, nome, CPF);
         this.salario = salario;
         this.senha = senha;
         this.cargo = cargo;
+        this.login = login;
     }
 
     public String getCargo() {
@@ -46,7 +54,12 @@ public class Funcionario extends Pessoa{
         this.senha = senha;
     }
         
-        
-        
+        public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
         
 }

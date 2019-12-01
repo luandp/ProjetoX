@@ -17,13 +17,13 @@ public class Facade_Funcionario {
     Controller_Funcionario control = new Controller_Funcionario();
     
     
-    public String Cadastrar_Funcionario(String nome, String cpf, String senha, String cargo, String salario){
+    public String Cadastrar_Funcionario(String nome, String cpf, String senha, String cargo, String salario, String login){
          //recebe variaveis
      String retorno = ""; 
       
      
       //chama controller
-      retorno = control.Validar_Cadastro(nome, cpf, senha, cargo, salario);
+      retorno = control.Validar_Cadastro(nome, cpf, senha, cargo, salario,login);
         
      
         return retorno;
