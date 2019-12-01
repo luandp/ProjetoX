@@ -5,11 +5,15 @@
  */
 package projetox.view;
 
+import javax.swing.JOptionPane;
+import projetox.facade.Facade_Funcionario;
+
 /**
  *
  * @author Luan Paulo
  */
 public class TelaCadastrarFuncionario extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form TelaCadastrarFuncionario
@@ -144,8 +148,23 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBtnCadastrarActionPerformed
+//gera variaveis
+        try {
+        //dados de pessoa
+        String nome = jTextNome.getText().trim();
+        String cpf = jTextCPF.getText().trim().trim();
+        
+        //dados de Funcionario      
+        String senha = jTextSenha.getText();
+        String cargo = JTextCargo.getSelectedItem().toString();
+        String salario = JTextSalario.getText().trim();
+                
+        //chama view
+        String result = fachada.Cadastrar_Funcionario(nome, cpf, senha, cargo, salario);
+        JOptionPane.showMessageDialog(this, result);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Nenhum dado pode ser Nulo.\nErro:"+e);
+        }    }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
     private void JTextCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextCargoActionPerformed
         // TODO add your handling code here:
@@ -185,7 +204,8 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
             }
         });
     }
-
+    
+private final Facade_Funcionario fachada = new Facade_Funcionario();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBtnCadastrar;
     private javax.swing.JLabel JLabelCPF;

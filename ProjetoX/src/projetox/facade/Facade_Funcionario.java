@@ -14,13 +14,35 @@ import projetox.controller.Controller_Funcionario;
  */
 public class Facade_Funcionario {
     
-    Controller_Funcionario Control = new Controller_Funcionario();
+    Controller_Funcionario control = new Controller_Funcionario();
     
     
-    public String Cadastrar_Funcionario(){
+    public String Cadastrar_Funcionario(String nome, String cpf, String senha, String cargo, String salario){
+         //recebe variaveis
+     String retorno = ""; 
+      
+     
+      //chama controller
+      retorno = control.Validar_Cadastro(nome, cpf, senha, cargo, salario);
+        
+     
+        return retorno;
+      /*  return "Cliente Cadastrado com Sucesso!"
+                + "\nNome:"+nome+""
+                + "\nCPF:"+cpf+""
+                + "\nIdade:"+idade+""
+                + "\nLogradouro:"+logradouro+""
+                + "\nN da Casa:"+n_casa+""
+                + "\nCEP:"+cep+""
+                + "\nBairro:"+bairro+""
+                + "\nCidade:"+cidade+""
+                + "\nEstado:"+estado+""
+                + "\nTelefone:"+telefone+""
+                ;*/
+        
         
     
-        return "";
+        
     }
     
     public ArrayList Listar_Funcionarios(){

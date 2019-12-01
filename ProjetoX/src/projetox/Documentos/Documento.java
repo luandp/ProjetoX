@@ -37,4 +37,10 @@ public class Documento {
 			Recebe os dados do Banco
 		-Retorna os dados para Controller
     */
+    
+    
+//    TelaCadastrarFuncionario->
+//        facade_Funcionario->
+//            Controller_Funcionario->
+//                Model_Funcionario
 }
