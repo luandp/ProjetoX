@@ -11,4 +11,5 @@ package projetox.Model;
  */
 public class Model_Aluguel {
     
+   
 }
