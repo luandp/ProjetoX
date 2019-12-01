@@ -387,6 +387,40 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        //gera variaveis
+        try {
+
+            int portas;
+            boolean arcondicionado;
+            
+            boolean veletrico;
+            boolean alarme;
+           
+            boolean cambioauto;//automatico ou manual
+            boolean multimidia;//
+            boolean status;//
+            
+            //dados de cliente
+            String arcondicionado = JTextArcondicionado.getSelectedItem().toString();   
+            String placa = JTextPlaca.getText().trim();
+            String marca = JTextMarca.getText().trim();
+            String modelo = JTextModelo.getText().trim();
+            String cor = JTextCor.getText().trim();
+            String ano = JTextAno.getText().trim();
+            String direcao = JTextDirecao.getText().trim();
+            String tipo = JTextTipo.getText().trim();
+            String combustivel = JTextCombustivel.getText().trim();
+            //chama view
+            String result = fachada.Cadastrar_Cliente(nome, cpf, idade, logradouro, n_casa, cep, bairro,cidade, estado, telefone);
+            JOptionPane.showMessageDialog(this, result);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Nenhum dado pode ser Nulo.\nErro:"+e);
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void JTextCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextCargoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTextCargoActionPerformed
