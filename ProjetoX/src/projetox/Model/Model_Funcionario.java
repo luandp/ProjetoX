@@ -44,7 +44,7 @@ public class Model_Funcionario {
     }
     
          
-      
+      /*
       
      public ArrayList<Funcionario> buscar_Funcionario(String nome) throws Exception
     {
@@ -73,7 +73,7 @@ public class Model_Funcionario {
         return funcionarios;
     }
      
-     
+     */
      
      public void remover_Funcionario(int codigo)throws Exception
     {
@@ -91,7 +91,7 @@ public class Model_Funcionario {
     }
      
      
-     
+     /*
      
     public void atualizar_Funcionario(Funcionario novo,int codigo)throws Exception
     {
@@ -105,7 +105,7 @@ public class Model_Funcionario {
         banco.Fechar();
     }
     
-    
+    */
     
     public boolean veirificarRemocao(String tipo)throws Exception
     {
@@ -161,7 +161,7 @@ public class Model_Funcionario {
 
         }
     
-   
+   /*
     //metodo chamado por validarLogin||TelaLogin
    public Funcionario VerificarLogin(Funcionario test) throws Exception
     {
@@ -199,9 +199,9 @@ public class Model_Funcionario {
      u.setTipo("errado");
      return u;
      }
+   */
    
-   
-   
+   /*
    public boolean verificarLoginDisponivel(String login) throws Exception
     {
      ArrayList<Funcionario> funcionarios = new ArrayList<>();
@@ -238,7 +238,7 @@ public class Model_Funcionario {
      return false;
      }
    
-   
+   */
    
  
     

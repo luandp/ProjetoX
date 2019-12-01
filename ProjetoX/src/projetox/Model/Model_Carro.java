@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import projetox.Class.Carro;
 import projetox.Class.Cliente;
 import projetox.Class.Conexao;
 
@@ -50,18 +51,18 @@ public class Model_Carro {
       public String Cadastrar_Carro(Carro novo)throws Exception
     {
         try {
-            
+          
             Statement conexao = banco.Abrir();
-            ResultSet resultado = conexao.executeQuery(selectId);
+            ResultSet resultado = conexao.executeQuery("");
             int id=0;
             while (resultado.next()){ id = Integer.parseInt(resultado.getString("Codigo"));  }        
-            
+            /*
             String InsertCarro = "insert into Carro "
                     + "(id, placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, tipo, combustivel, cambioauto, multimidia, status)"
                     + "values "
                     + "("+id+","+novo.getPlaca()+",'"+novo.getMarca()+"',"+novo.getModelo()+",'"+novo.getAno()+"','"+novo.getCor()+"','"+novo.getPortas()+"','"+novo.getArcondicionado()+"','"+novo.getDirecao()+"','"+novo.getVeletrico()+"','"+novo.getAlarme()+"','"+novo.getTipo()+"','"+novo.getCombustivel()+"','"+novo.getCambioauto()+"','"+novo.getMultimidia()+"','"+novo.getStatus()+"')";
             conexao.execute(InsertCarro);
-             
+             */
              return "Carro Cadastrado com Sucesso!";
             
         } catch (SQLException e) {

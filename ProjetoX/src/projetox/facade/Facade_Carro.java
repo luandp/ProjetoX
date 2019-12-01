@@ -22,10 +22,10 @@ public class Facade_Carro {
       
 
       //chama controller
-      retorno = control.Validar_Cadastro(placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, tipo, combustivel, cambioauto, multimidia, status);
+      //retorno = control.Validar_Cadastro(placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, tipo, combustivel, cambioauto, multimidia, status);
         
         
-        return retorno;
+        //return retorno;
       /*  return "Cliente Cadastrado com Sucesso!"
                 + "\nNome:"+nome+""
                 + "\nCPF:"+cpf+""
@@ -40,7 +40,7 @@ public class Facade_Carro {
                 ;*/
         
     
-        control.Validar_Cadastro();
+        //control.Validar_Cadastro();
         return "";
     }
     

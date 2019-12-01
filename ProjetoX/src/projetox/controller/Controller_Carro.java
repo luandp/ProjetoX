@@ -21,8 +21,7 @@ public class Controller_Carro {
         //fazer validacoes aqui
         //Transformar Variaveis
      
-        int id = 0;
-        int portas = Integer.parseInt(portas);
+      
         //Logradouro é String
         
         //Bairro é String
