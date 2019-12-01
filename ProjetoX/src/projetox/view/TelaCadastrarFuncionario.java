@@ -45,7 +45,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         JLabelSenha1 = new javax.swing.JLabel();
-        jTextLogin = new javax.swing.JPasswordField();
+        jTextLogin = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar Funcionário - ProjetoX");
@@ -116,7 +116,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                             .addComponent(JTextCargo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextSenha)
                             .addComponent(JTextSalario)
-                            .addComponent(jTextLogin))))
+                            .addComponent(jTextLogin, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
@@ -134,9 +134,9 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                     .addComponent(jTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLabelSenha1))
-                .addGap(13, 13, 13)
+                    .addComponent(JLabelSenha1)
+                    .addComponent(jTextLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLabelSenha)
                     .addComponent(jTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -150,7 +150,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                     .addComponent(JLabelSalario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JBtnCadastrar)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -229,7 +229,7 @@ private final Facade_Funcionario fachada = new Facade_Funcionario();
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextCPF;
-    private javax.swing.JPasswordField jTextLogin;
+    private javax.swing.JTextField jTextLogin;
     private javax.swing.JTextField jTextNome;
     private javax.swing.JPasswordField jTextSenha;
     // End of variables declaration//GEN-END:variables

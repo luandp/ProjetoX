@@ -8,6 +8,7 @@ package projetox.Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import projetox.Class.Funcionario;
 import projetox.Class.Conexao;
 
@@ -30,9 +31,9 @@ public class Model_Funcionario {
             while (resultado.next()){ id = Integer.parseInt(resultado.getString("Codigo"));  }      
             
             String InsertFuncionario = "insert into Funcionario "
-                    + "(CodigoPessoa,Senha,Cargo,Salario)"
+                    + "(CodigoPessoa,Login,Senha,Cargo,Salario)"
                     + "values "
-                    + "("+id+",'"+novo.getSenha()+"','"+novo.getCargo()+"',"+novo.getSalario()+" )";
+                    + "("+id+",'"+novo.getLogin()+"','"+novo.getSenha()+"','"+novo.getCargo()+"',"+novo.getSalario()+" )";
             conexao.execute(InsertFuncionario);
            
             return  "Funcionario Cadastrado com Sucesso!";
@@ -43,7 +44,7 @@ public class Model_Funcionario {
     }
     
          
-      /*
+      
       
      public ArrayList<Funcionario> buscar_Funcionario(String nome) throws Exception
     {
@@ -57,9 +58,9 @@ public class Model_Funcionario {
         {            
             Funcionario funcionario = new Funcionario();
             funcionario.setNome(re.getString("Nome"));
-            funcionario.setLogin(re.getString("login"));
-            funcionario.setTipo(re.getString("tipo"));
-            funcionario.setCodigo(Integer.parseInt(re.getString("codigo")));
+            funcionario.setLogin(re.getString("Login"));
+            funcionario.setCargo(re.getString("Cargo"));
+            funcionario.setId(Integer.parseInt(re.getString("Codigo")));
             funcionarios.add(funcionario);
         
         }
@@ -71,7 +72,7 @@ public class Model_Funcionario {
         banco.Fechar();
         return funcionarios;
     }
-     */
+     
      
      
      public void remover_Funcionario(int codigo)throws Exception
@@ -90,13 +91,13 @@ public class Model_Funcionario {
     }
      
      
-     /*
+     
      
     public void atualizar_Funcionario(Funcionario novo,int codigo)throws Exception
     {
         try {
             Statement conexao = banco.Abrir();
-            String update = "update  usuario set nome = '"+novo.getNome()+"',login = '"+novo.getLogin()+"',senha = '"+novo.getSenha()+"',tipo = '"+novo.getTipo()+"' where codigo = "+codigo+"";
+            String update = "update  Funcionario set Nome = '"+novo.getNome()+"',login = '"+novo.getLogin()+"',senha = '"+novo.getSenha()+"',tipo = '"+novo.getCargo()+"' where codigo = "+codigo+"";
             conexao.executeUpdate(update);
         } catch (SQLException e) {
             throw  new Exception("Erro update: "+e);
@@ -104,7 +105,7 @@ public class Model_Funcionario {
         banco.Fechar();
     }
     
-    */
+    
     
     public boolean veirificarRemocao(String tipo)throws Exception
     {
@@ -160,7 +161,7 @@ public class Model_Funcionario {
 
         }
     
-   /*
+   
     //metodo chamado por validarLogin||TelaLogin
    public Funcionario VerificarLogin(Funcionario test) throws Exception
     {
@@ -175,15 +176,15 @@ public class Model_Funcionario {
          {
              
              Funcionario funcionarioo = new Funcionario();
-             funcionarioo.setLogin(resultado.getString("login"));
-             funcionarioo.setSenha(resultado.getString("senha"));
-             funcionarioo.setTipo(resultado.getString("tipo"));
-             funcionarioo.setCodigo(Integer.parseInt(resultado.getString("codigo")));
+             funcionarioo.setLogin(resultado.getString("Login"));
+             funcionarioo.setSenha(resultado.getString("Senha"));
+             funcionarioo.setCargo(resultado.getString("Cargo"));
+             funcionarioo.setId(Integer.parseInt(resultado.getString("Codigo")));
              funcionarios.add(funcionarioo);
          }
          for(int i =0;i<funcionarios.size();i++)
          {
-             if(funcionarios.get(i).getLogin().equals(test.getLogin())&& clientes.get(i).getSenha().equals(test.getSenha()))
+             if(funcionarios.get(i).getLogin().equals(test.getLogin())&& funcionarios.get(i).getSenha().equals(test.getSenha()))
              {
                return funcionarios.get(i);
              }
@@ -195,12 +196,12 @@ public class Model_Funcionario {
      }
      banco.Fechar();
      Funcionario u = new Funcionario();
-     u.setTipo("errado");
+     u.setCargo("errado");
      return u;
      }
-   */
    
-   /*
+   
+   
    public boolean verificarLoginDisponivel(String login) throws Exception
     {
      ArrayList<Funcionario> funcionarios = new ArrayList<>();
@@ -214,7 +215,7 @@ public class Model_Funcionario {
          {
              Funcionario funcionario = new Funcionario();
              funcionario.setLogin(resultado.getString("login"));
-             funcionario.add(funcionario);
+             funcionarios.add(funcionario);
              
          }
          for(int i =0;i<funcionarios.size();i++)
@@ -237,10 +238,5 @@ public class Model_Funcionario {
      return false;
      }
    
-   */
    
- 
-    
-    
-    
 }
