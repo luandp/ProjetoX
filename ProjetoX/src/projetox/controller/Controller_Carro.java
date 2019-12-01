@@ -14,9 +14,34 @@ import projetox.Model.Model_Carro;
  */
 public class Controller_Carro {
     
-    public String Validar_Cadastro(){
+    Model_Carro model = new Model_Carro();
     
-        return "";
+    public String Validar_Cadastro(int id, String placa, String marca, String modelo, String cor, String ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String tipo, String combustivel, boolean cambioauto, boolean multimidia, boolean status) throws Exception{
+    
+        //fazer validacoes aqui
+        //Transformar Variaveis
+     
+        int id = 0;
+        int portas = Integer.parseInt(portas);
+        //Logradouro é String
+        
+        //Bairro é String
+        //Cidade é String
+        //Estado é String
+        //Telefone é String
+        
+        //int idade, String logradouro, int n_casa, int cep, String bairro, String cidade, String estado, String telefone, int id, String nome, String CPF;
+        
+        String retorno = "";
+        //criar classe cliente e popular dados
+        //int idade, String logradouro, int n_casa, int cep, String bairro, String cidade, String estado, String telefone, int id, String nome, String CPF
+        Carro novo = new Carro(id, placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, tipo, combustivel, cambioauto, multimidia, status);
+        
+        
+        //chamar model
+        retorno = model.Cadastrar_Carro(novo);
+        
+        return retorno;
     }
     
     public String Validar_Atualizar(){
