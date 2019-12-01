@@ -6,6 +6,7 @@
 package projetox.view;
 
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import projetox.Class.Funcionario;
 import projetox.facade.Facade_Funcionario;
@@ -65,6 +66,11 @@ public class TelaLogin extends javax.swing.JFrame {
                 JBrnEntrarActionPerformed(evt);
             }
         });
+        JBrnEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JBrnEntrarKeyPressed(evt);
+            }
+        });
 
         JTextLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         JTextLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +83,11 @@ public class TelaLogin extends javax.swing.JFrame {
         JTextSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextSenhaActionPerformed(evt);
+            }
+        });
+        JTextSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTextSenhaKeyPressed(evt);
             }
         });
 
@@ -145,7 +156,6 @@ public class TelaLogin extends javax.swing.JFrame {
             TelaPrincipal telap = new TelaPrincipal(funcionario);
             telap.setLocationRelativeTo(null);
             telap.show();
-           
             dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, ""+e.getMessage(), "Erro:", JOptionPane.ERROR_MESSAGE);
@@ -169,6 +179,18 @@ public class TelaLogin extends javax.swing.JFrame {
     private void JBrnEntrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBrnEntrarMouseExited
         JBrnEntrar.setBackground(new Color (0, 51, 255));
     }//GEN-LAST:event_JBrnEntrarMouseExited
+
+    private void JBrnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JBrnEntrarKeyPressed
+      				if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+					JBrnEntrar.doClick();
+				}
+    }//GEN-LAST:event_JBrnEntrarKeyPressed
+
+    private void JTextSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTextSenhaKeyPressed
+              			if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+					JBrnEntrar.doClick();
+				}
+    }//GEN-LAST:event_JTextSenhaKeyPressed
 
     /**
      * @param args the command line arguments
