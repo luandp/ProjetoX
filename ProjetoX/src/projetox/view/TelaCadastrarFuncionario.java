@@ -40,7 +40,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         jTextCPF = new javax.swing.JTextField();
         jTextSenha = new javax.swing.JPasswordField();
         JTextSalario = new javax.swing.JTextField();
-        JTextCargo = new javax.swing.JComboBox<>();
+        JTextCargo = new javax.swing.JComboBox<String>();
         JBtnCadastrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,7 +58,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
 
         JLabelSalario.setText("Salário");
 
-        JTextCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Comissionado", "Gerente" }));
+        JTextCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Funcionário", "Comissionado", "Gerente" }));
         JTextCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextCargoActionPerformed(evt);
@@ -89,29 +89,29 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelSalario)
-                                .addGap(18, 18, 18)
-                                .addComponent(JTextSalario))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelCargo)
-                                .addGap(161, 161, 161)
-                                .addComponent(JTextCargo, 0, 223, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelCPF)
                                 .addGap(32, 32, 32)
                                 .addComponent(jTextCPF))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelSenha)
-                                .addGap(20, 20, 20)
-                                .addComponent(jTextSenha))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(JLabelNome)
-                                .addGap(24, 24, 24)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addGap(24, 24, 24)
                                         .addComponent(jLabel1)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jTextNome))))))
+                                        .addGap(0, 37, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jTextNome))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JLabelSenha)
+                                    .addComponent(JLabelCargo)
+                                    .addComponent(JLabelSalario))
+                                .addGap(14, 14, 14)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTextSalario)
+                                    .addComponent(JTextCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextSenha))))))
                 .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
@@ -128,9 +128,9 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                     .addComponent(JLabelCPF)
                     .addComponent(jTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLabelSenha)
-                    .addComponent(jTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTextCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
