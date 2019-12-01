@@ -35,8 +35,8 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         jTextNome = new javax.swing.JTextField();
         jTextCPF = new javax.swing.JTextField();
         jTextSenha = new javax.swing.JPasswordField();
-        jTextSalario = new javax.swing.JTextField();
-        jComboCargo = new javax.swing.JComboBox<String>();
+        JTextSalario = new javax.swing.JTextField();
+        JTextCargo = new javax.swing.JComboBox<>();
         JBtnCadastrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -54,10 +54,10 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
 
         JLabelSalario.setText("Salário");
 
-        jComboCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Funcionário", "Comissionado", "Gerente" }));
-        jComboCargo.addActionListener(new java.awt.event.ActionListener() {
+        JTextCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Comissionado", "Gerente" }));
+        JTextCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboCargoActionPerformed(evt);
+                JTextCargoActionPerformed(evt);
             }
         });
 
@@ -87,11 +87,11 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelSalario)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextSalario))
+                                .addComponent(JTextSalario))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelCargo)
                                 .addGap(161, 161, 161)
-                                .addComponent(jComboCargo, 0, 223, Short.MAX_VALUE))
+                                .addComponent(JTextCargo, 0, 223, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JLabelCPF)
                                 .addGap(32, 32, 32)
@@ -129,11 +129,11 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
                     .addComponent(jTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLabelCargo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JLabelSalario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JBtnCadastrar)
@@ -147,9 +147,9 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
-    private void jComboCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboCargoActionPerformed
+    private void JTextCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextCargoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboCargoActionPerformed
+    }//GEN-LAST:event_JTextCargoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,12 +193,12 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel JLabelNome;
     private javax.swing.JLabel JLabelSalario;
     private javax.swing.JLabel JLabelSenha;
-    private javax.swing.JComboBox<String> jComboCargo;
+    private javax.swing.JComboBox<String> JTextCargo;
+    private javax.swing.JTextField JTextSalario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextCPF;
     private javax.swing.JTextField jTextNome;
-    private javax.swing.JTextField jTextSalario;
     private javax.swing.JPasswordField jTextSenha;
     // End of variables declaration//GEN-END:variables
 }

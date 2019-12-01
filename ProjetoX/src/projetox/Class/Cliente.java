@@ -19,8 +19,8 @@ public class Cliente extends Pessoa{
     String cidade;
     String estado;
     String telefone;
-
-    public Cliente(int idade, String logradouro, int n_casa, int cep, String bairro, String cidade, String estado, String telefone, int id, String nome, String CPF) {
+    //nome, cpf, idadeConvertida, logradouro, n_casaConvertido, cepConvertido, bairro, cidade, estado, telefone
+    public Cliente(int id, String nome, String CPF, int idade, String logradouro, int n_casa, int cep, String bairro,String cidade,String estado,String telefone) {
         super(id, nome, CPF);
         this.idade = idade;
         this.logradouro = logradouro;
@@ -31,6 +31,8 @@ public class Cliente extends Pessoa{
         this.estado = estado;
         this.telefone = telefone;
     }
+
+    
 
     
     

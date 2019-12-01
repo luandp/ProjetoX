@@ -36,12 +36,12 @@
                           <Group type="102" alignment="2" attributes="0">
                               <Component id="JLabelSalario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="18" pref="18" max="18" attributes="0"/>
-                              <Component id="jTextSalario" max="32767" attributes="0"/>
+                              <Component id="JTextSalario" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="2" attributes="0">
                               <Component id="JLabelCargo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
-                              <Component id="jComboCargo" pref="223" max="32767" attributes="0"/>
+                              <Component id="JTextCargo" pref="223" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="2" attributes="0">
                               <Component id="JLabelCPF" min="-2" max="-2" attributes="0"/>
@@ -93,12 +93,12 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComboCargo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JTextCargo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JLabelCargo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextSalario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JTextSalario" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JLabelSalario" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -140,9 +140,9 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="jTextSenha">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextSalario">
+    <Component class="javax.swing.JTextField" name="JTextSalario">
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboCargo">
+    <Component class="javax.swing.JComboBox" name="JTextCargo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -153,7 +153,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboCargoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTextCargoActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

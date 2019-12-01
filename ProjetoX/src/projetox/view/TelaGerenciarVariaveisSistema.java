@@ -37,8 +37,8 @@ public class TelaGerenciarVariaveisSistema extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         JStatusBD = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        JBtnAbrir = new javax.swing.JButton();
+        JBtnFechar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -48,19 +48,19 @@ public class TelaGerenciarVariaveisSistema extends javax.swing.JFrame {
 
         JStatusBD.setText("Status");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/lock.png"))); // NOI18N
-        jButton1.setText("Abrir Conexão");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        JBtnAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/lock.png"))); // NOI18N
+        JBtnAbrir.setText("Abrir Conexão");
+        JBtnAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                JBtnAbrirActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/cancel.png"))); // NOI18N
-        jButton2.setText("Fechar Conexão");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        JBtnFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/cancel.png"))); // NOI18N
+        JBtnFechar.setText("Fechar Conexão");
+        JBtnFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                JBtnFecharActionPerformed(evt);
             }
         });
 
@@ -79,9 +79,9 @@ public class TelaGerenciarVariaveisSistema extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(JStatusBD, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)
+                                .addComponent(JBtnAbrir)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))))
+                                .addComponent(JBtnFechar))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel2)))
@@ -95,8 +95,8 @@ public class TelaGerenciarVariaveisSistema extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JStatusBD)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(JBtnAbrir)
+                    .addComponent(JBtnFechar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(26, 26, 26))
@@ -106,7 +106,7 @@ public class TelaGerenciarVariaveisSistema extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void JBtnAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnAbrirActionPerformed
         // TODO add your handling code here:
        
         try {
@@ -116,9 +116,9 @@ public class TelaGerenciarVariaveisSistema extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "A:"+ex);
             Logger.getLogger(TelaGerenciarVariaveisSistema.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_JBtnAbrirActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void JBtnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnFecharActionPerformed
         // TODO add your handling code here:
         try {
             con.Fechar();
@@ -129,7 +129,7 @@ public class TelaGerenciarVariaveisSistema extends javax.swing.JFrame {
         }
         
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_JBtnFecharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,9 +167,9 @@ public class TelaGerenciarVariaveisSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBtnAbrir;
+    private javax.swing.JButton JBtnFechar;
     private javax.swing.JLabel JStatusBD;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
