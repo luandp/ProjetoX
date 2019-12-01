@@ -15,7 +15,7 @@ public class Carro {
         String marca;
         String modelo;
         String cor;
-        String ano;
+        int ano;
         int portas;//2 ou 4;
         boolean arcondicionado;
         String direcao;//eletrica ou hidraulica ou mecanica
@@ -28,7 +28,26 @@ public class Carro {
         boolean status;//disponivel(aluguel ou venda) -true
 
 
-    public Carro(int id, String placa, String marca, String modelo, String cor, String ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String tipo, String combustivel, boolean cambioauto, boolean multimidia, boolean status) {
+        public Carro() {
+        this.id = 0;
+        this.placa = "";
+        this.marca = "";
+        this.modelo = "";
+        this.cor = "";
+        this.ano = 0;
+        this.portas = 0;
+        this.arcondicionado = false;
+        this.direcao = "";
+        this.veletrico = false;
+        this.alarme = false;
+        this.tipo = "";
+        this.combustivel = "";
+        this.cambioauto = false;
+        this.multimidia = false;
+        this.status = false;
+    }
+        
+    public Carro(int id, String placa, String marca, String modelo, String cor, int ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String tipo, String combustivel, boolean cambioauto, boolean multimidia, boolean status) {
         this.id = id;
         this.placa = placa;
         this.marca = marca;
@@ -96,11 +115,11 @@ public class Carro {
         this.cor = cor;
     }
 
-    public String getAno() {
+    public int getAno() {
         return ano;
     }
 
-    public void setAno(String ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
 
@@ -174,16 +193,5 @@ public class Carro {
 
     public void setMultimidia(boolean multimidia) {
         this.multimidia = multimidia;
-    }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    }       
 }

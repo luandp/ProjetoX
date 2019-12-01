@@ -5,92 +5,85 @@
  */
 package projetox.Model;
 
+
+import java.awt.Component;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import projetox.Class.Carro;
-import projetox.Class.Cliente;
+import projetox.Class.Carro;
 import projetox.Class.Conexao;
+import projetox.Class.Carro;
 
 /**
  *
  * @author Luan Paulo
  */
 public class Model_Carro {
-   /*     Conexao banco = new Conexao();
+         Conexao banco = new Conexao();
     
-    public String Cadastrar_Cliente(Cliente novo){
+    public String Cadastrar_Carro(Carro novo){
         
         try {
             Statement conexao = banco.Abrir();
-            String InsertPessoa = "insert into Pessoa (Nome,CPF)values ('"+novo.getNome()+"','"+novo.getCPF()+"')";
-            conexao.execute(InsertPessoa);
-            String codigo = "SELECT MAX(Codigo) FROM Pessoa";
-            //String cod = conexao.execute(codigo);
-            //int id = Integer.parseInt(codigo);
-            int id = 10;
-            //select * from protocolo where codigo = (SELECT MAX(CODIGO) FROM PROTOCOLO)
-            String InsertCliente = "insert into Cliente "
-                    + "(CodigoPessoa,Idade,Logradouro,N_Casa,CEP,Bairro,Cidade,Estado,Telefone)"
-                    + "values "
-                    + "("+id+","+novo.getIdade()+",'"+novo.getLogradouro()+"',"+novo.getN_casa()+",'"+novo.getCep()+"','"+novo.getBairro()+"','"+novo.getCidade()+"','"+novo.getEstado()+"','"+novo.getTelefone()+"')";
-            conexao.execute(InsertCliente);
-            
-            String retorno =  "Cliente Cadastrado com Sucesso!";
-        return retorno;
+            String InsertCarro = "insert into Carro (Placa,Marca,Modelo,Cor,Ano,Portas,Arcondicionado,Direcao,Vidroeletrico,Alarme,Cambio,Combustivel,Multimidia,Tipo,Status)values "
+                    + "','"+novo.getPlaca()
+                    + "','"+novo.getMarca()
+                    + "','"+novo.getModelo()
+                    + "','"+novo.getCor()
+                    + "','"+novo.getAno()
+                    + "','"+novo.getPortas()
+                    + "','"+novo.isArcondicionado()
+                    + "','"+novo.getDirecao()
+                    + "','"+novo.isVeletrico()
+                    + "','"+novo.isAlarme()
+                    + "','"+novo.isCambioauto()
+                    + "','"+novo.getCombustivel()
+                    + "','"+novo.isMultimidia()
+                    + "','"+novo.isStatus()
+                    + "','"+novo.getTipo()+"')";
+            conexao.execute(InsertCarro);      
+            return  "Carro Cadastrado com Sucesso!";
         } catch (Exception e) {
-            String retorno = ""+e;
-            return retorno;
+            return  ""+e;
         }
     }
-
-    */
-    Conexao banco = new Conexao();
-
-      public String Cadastrar_Carro(Carro novo)throws Exception
+    
+     public ArrayList<Carro> buscar_Carro(String modelo) throws Exception
     {
-        try {
-          
-            Statement conexao = banco.Abrir();
-            ResultSet resultado = conexao.executeQuery("");
-            int id=0;
-            while (resultado.next()){ id = Integer.parseInt(resultado.getString("Codigo"));  }        
-            /*
-            String InsertCarro = "insert into Carro "
-                    + "(id, placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, tipo, combustivel, cambioauto, multimidia, status)"
-                    + "values "
-                    + "("+id+","+novo.getPlaca()+",'"+novo.getMarca()+"',"+novo.getModelo()+",'"+novo.getAno()+"','"+novo.getCor()+"','"+novo.getPortas()+"','"+novo.getArcondicionado()+"','"+novo.getDirecao()+"','"+novo.getVeletrico()+"','"+novo.getAlarme()+"','"+novo.getTipo()+"','"+novo.getCombustivel()+"','"+novo.getCambioauto()+"','"+novo.getMultimidia()+"','"+novo.getStatus()+"')";
-            conexao.execute(InsertCarro);
-             */
-             return "Carro Cadastrado com Sucesso!";
-            
-        } catch (SQLException e) {
-            
-            throw  new Exception("Errooo Insert"+e);
-        }
-        
-    }
-      /*
-      
-      
-     public ArrayList<Cliente> buscar_Cliente(String nome) throws Exception
-    {
-        ArrayList<Cliente> clientes = new ArrayList<>();
+        ArrayList<Carro> carros = new ArrayList<>();
         try
         {
-        Statement con = banco.Abrir();
-        String select = "select Nome,login,codigo,tipo from usuario where nome like '" + nome + "%'";
-        ResultSet re = con.executeQuery(select);
-        while (re.next())
-        {            
-            Cliente cliente = new cliente();
-            cliente.setNome(re.getString("Nome"));
-            cliente.setLogin(re.getString("login"));
-            cliente.setTipo(re.getString("tipo"));
-            cliente.setCodigo(Integer.parseInt(re.getString("codigo")));
-            clientes.add(cliente);
+        Statement conexao = banco.Abrir();
+        String select = "select * from Carro where Modelo like '" + modelo + "%'";
+        ResultSet resposta = conexao.executeQuery(select);
         
+        while (resposta.next())
+        {             
+            Carro carro = new Carro();
+            carro.setId(resposta.getInt("Codigo"));
+            carro.setPlaca(resposta.getString("Placa"));
+            carro.setMarca(resposta.getString("Marca"));
+            carro.setModelo(resposta.getString("Modelo"));
+            carro.setCor(resposta.getString("Cor"));
+            carro.setAno(resposta.getInt("Ano"));
+            carro.setPortas(resposta.getInt("Portas"));
+            carro.setArcondicionado(resposta.getBoolean("Arcondicionado"));
+            carro.setDirecao(resposta.getString("Direcao"));
+            carro.setVeletrico(resposta.getBoolean("Vidroeletrico"));
+            carro.setAlarme(resposta.getBoolean("Alarme"));
+            carro.setTipo(resposta.getString("Tipo"));
+            carro.setCombustivel(resposta.getString("Combustivel"));
+            carro.setCambioauto(resposta.getBoolean("Cambio"));
+            carro.setMultimidia(resposta.getBoolean("Multimidia"));
+            carro.setStatus(resposta.getBoolean("Status"));
+          
+            /*ResultSet resultado2 = conexao.executeQuery(select2);
+            while(resultado2.next()){
+            }*/
+            carros.add(carro);
         }
         }
         catch(SQLException e)
@@ -98,58 +91,63 @@ public class Model_Carro {
             throw  new Exception("ERROOOOO Select "+e);
         }
         banco.Fechar();
-        return clientes;
+        return carros;
     }
      
      
      
-     public void remover_Cliente(int codigo)throws Exception
+     public String remover_Carro(String Modelo)throws Exception
     {
         try {
+            Statement conexao = banco.Abrir();
+            String deleteCarro = "delete from Carro where ModeloCarro = "+Modelo+"";
+            conexao.execute(deleteCarro);
+            String deletePessoa = "delete from Carro where Modelo = "+Modelo+"";
+            conexao.execute(deletePessoa);
             
-            Statement con = banco.Abrir();
-            String delet = "delete from usuario where codigo = "+codigo+"";
-            con.execute(delet);
         } catch (SQLException e)
         {
-            throw  new Exception("Erro delete"+e);
+            throw  new Exception("Erro delete:"+e);
         }
         banco.Fechar();
-       
+        return "Carro Removido com Sucesso!";
     }
      
      
      
      
-    public void atualizar_Cliente(Cliente novo,int codigo)throws Exception
+    public void atualizar_Carro(Carro novo,String Modelo)throws Exception
     {
         try {
-            Statement con = banco.Abrir();
-            String update = "update  usuario set nome = '"+novo.getNome()+"',login = '"+novo.getLogin()+"',senha = '"+novo.getSenha()+"',tipo = '"+novo.getTipo()+"' where codigo = "+codigo+"";
-            con.executeUpdate(update);
+            Statement conexao = banco.Abrir();
+
+            String updateCarro = "update  Carro set Placa = '"+novo.getPlaca()+"',Marca = '"+novo.getMarca()+"',Modelo = '"+novo.getModelo()+"',Cor = '"+novo.getCor()+"',Ano = '"+novo.getAno()+"',Portas = '"+novo.getPortas()+"',Arcondicionado = '"+novo.isArcondicionado()+"',Direcao = '"+novo.getDirecao()+"',Vidroeletrico = '"+novo.isVeletrico()+"',Alarme = '"+novo.isAlarme()+"',Tipo = '"+novo.getTipo()+"',Combustivel = '"+novo.getCombustivel()+"',Cambio = '"+novo.isCambioauto()+"',Multimidia = '"+novo.isMultimidia()+"',Status = "+novo.isStatus()+" where ModeloCarro = "+Modelo+"";
+            conexao.executeUpdate(updateCarro);
+
+
         } catch (SQLException e) {
-            throw  new Exception("Erro update"+e);
+            throw  new Exception("Erro update: "+e);
         }
         banco.Fechar();
     }
     
     
     
-    public boolean veirificarRemocao(String tipo)throws Exception
+    public boolean veirificarRemocao(String cargo)throws Exception
     {
-        if(tipo.equals("Administrador"))
+        if(cargo.equals("Gerente"))
         {
-            int numero =0;
+            int index =0;
            
         try {
-            Statement co = banco.Abrir();
-            String select = "select tipo from usuario where tipo like '" + tipo + "%'";
-            ResultSet re = co.executeQuery(select);
+            Statement conexao = banco.Abrir();
+            String select = "select Cargo from Carro where Cargo like '" + cargo + "%'";
+            ResultSet re = conexao.executeQuery(select);
             while (re.next()) 
             {                
-                numero = numero+1;
+                index = index+1;
             }
-            if(numero <=1)
+            if(index <=1)
             {
                 return true;
             }
@@ -168,9 +166,9 @@ public class Model_Carro {
     {
             int numero =0;        
         try {
-            Statement co = banco.Abrir();
-            String select = "select tipo from usuario where tipo like '" +"Administrador"+ "%'";
-            ResultSet re = co.executeQuery(select);
+            Statement conexao = banco.Abrir();
+            String select = "select Cargo from Funcioario where Cargo like '" +"Gerente"+ "%'";
+            ResultSet re = conexao.executeQuery(select);
             while (re.next()) 
             {                
                 numero = numero+1;
@@ -188,88 +186,5 @@ public class Model_Carro {
         return false;
 
         }
-    
-    */
-    /*
-    //metodo chamado por validarLogin||TelaLogin
-   public Cliente VerificarLogin(Cliente test) throws Exception
-    {
-     ArrayList<Cliente> clientes = new ArrayList<>();
-     try 
-     {
-      Statement coon = banco.Abrir();   
-      String busca ="select login,senha,tipo,codigo from usuario ";
-      ResultSet resultado = coon.executeQuery(busca);
-         while (resultado.next())
-
-         {
-             
-             Cliente clientee = new Cliente();
-             clientee.setLogin(resultado.getString("login"));
-             clientee.setSenha(resultado.getString("senha"));
-             clientee.setTipo(resultado.getString("tipo"));
-             clientee.setCodigo(Integer.parseInt(resultado.getString("codigo")));
-             clientes.add(clientee);
-         }
-         for(int i =0;i<clientes.size();i++)
-         {
-             if(clientes.get(i).getLogin().equals(test.getLogin())&& clientes.get(i).getSenha().equals(test.getSenha()))
-             {
-               return clientes.get(i);
-             }
-         }
-         
-     } catch (Exception e) 
-     {
-         throw  new Exception(e);
-     }
-     banco.Fechar();
-     Cliente u = new Cliente();
-     u.setTipo("errado");
-     return u;
-     }
-   */
    
-   /*
-   public boolean verificarLoginDisponivel(String login) throws Exception
-    {
-     ArrayList<Cliente> clientes = new ArrayList<>();
-     try 
-     {
-      Statement coon = banco.Abrir();   
-      String busca ="select login from usuario where login = '"+login+"'";
-      ResultSet resultado = coon.executeQuery(busca);
-      int conta = 0;
-         while (resultado.next())
-         {
-             Cliente cleintee = new Cliente();
-             cleintee.setLogin(resultado.getString("login"));
-             clientes.add(cleintee);
-             
-         }
-         for(int i =0;i<clientes.size();i++)
-         {
-         if(clientes.get(i).getLogin().equals(login))
-         {
-               conta = conta+1;
-         }
-         }
-         if(conta >=1)
-         {
-             return  true;
-         }
-         
-     } catch (Exception e) 
-     {
-         throw  new Exception(e);
-     }
-     banco.Fechar();
-     return false;
-     }
-   
-   
-   
- */
-    
-    
 }

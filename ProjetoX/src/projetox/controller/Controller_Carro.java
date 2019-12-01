@@ -16,7 +16,7 @@ public class Controller_Carro {
     
     Model_Carro model = new Model_Carro();
     
-    public String Validar_Cadastro(int id, String placa, String marca, String modelo, String cor, String ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String tipo, String combustivel, boolean cambioauto, boolean multimidia, boolean status) throws Exception{
+    public String Validar_Cadastro(int id, String placa, String marca, String modelo, String cor, int ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String tipo, String combustivel, boolean cambioauto, boolean multimidia, boolean status) throws Exception{
     
         //fazer validacoes aqui
         //Transformar Variaveis
