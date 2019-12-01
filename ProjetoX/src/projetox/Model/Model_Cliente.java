@@ -22,9 +22,10 @@ public class Model_Cliente {
             Statement conexao = banco.Abrir();
             String InsertPessoa = "insert into Pessoa (Nome,CPF)values ('"+novo.getNome()+"','"+novo.getCPF()+"')";
             conexao.execute(InsertPessoa);
-            
-            String codigo = "SELECT Max('Codigo') from 'Pessoa'";
-            int id = Integer.parseInt(codigo);
+            String codigo = "SELECT MAX(Codigo) FROM Pessoa";
+            //String cod = conexao.execute(codigo);
+            //int id = Integer.parseInt(codigo);
+            int id = 10;
             //select * from protocolo where codigo = (SELECT MAX(CODIGO) FROM PROTOCOLO)
             String InsertCliente = "insert into Cliente "
                     + "(CodigoPessoa,Idade,Logradouro,N_Casa,CEP,Bairro,Cidade,Estado,Telefone)"
