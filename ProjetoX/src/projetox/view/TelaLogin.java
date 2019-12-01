@@ -6,6 +6,9 @@
 package projetox.view;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import projetox.Class.Funcionario;
+import projetox.facade.Facade_Funcionario;
 
 /**
  *
@@ -136,12 +139,18 @@ public class TelaLogin extends javax.swing.JFrame {
     private void JBrnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBrnEntrarActionPerformed
         
         
-        TelaPrincipal telap = new TelaPrincipal();
-        telap.setLocationRelativeTo(null);
-        telap.show();
-        dispose();
-        
-        
+         try {
+            Funcionario funcionario = new Funcionario();
+            funcionario = fachada.validar_Login(JTextLogin.getText(), JTextSenha.getText());
+            TelaPrincipal telap = new TelaPrincipal(funcionario);
+            telap.setLocationRelativeTo(null);
+            telap.show();
+           
+            dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, ""+e.getMessage(), "Erro:", JOptionPane.ERROR_MESSAGE);
+            
+        }
         
     }//GEN-LAST:event_JBrnEntrarActionPerformed
 
@@ -195,7 +204,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
     }
-
+    Facade_Funcionario fachada = new Facade_Funcionario();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBrnEntrar;
     private javax.swing.JTextField JTextLogin;

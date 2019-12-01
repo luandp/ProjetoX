@@ -8,6 +8,7 @@ package projetox.controller;
 import java.util.ArrayList;
 import projetox.Class.Funcionario;
 import projetox.Model.Model_Funcionario;
+import projetox.view.TelaPrincipal;
 
 /**
  *
@@ -126,4 +127,31 @@ public class Controller_Funcionario {
             model.atualizar_Funcionario(novo,id);
             
     }
+        
+    public Funcionario validar_Login(String login, String senha)throws Exception
+    {
+       
+       if(login.trim().equals(""))
+        {
+       throw  new Exception("Informe o seu Login ");
+        }
+        if(senha.trim().equals("")|| senha.trim().length()<3)
+        {
+        throw  new Exception("Informe a sua Senha ");
+        
+        }
+            Funcionario funcionarioo = new Funcionario();
+            funcionarioo =  model.VerificarLogin(login,senha);
+            if(funcionarioo.getCargo().equals("errado"))
+            {
+                throw  new Exception("123456: ALogin ou Senha invalida");
+                
+            }
+        return funcionarioo;
+            
+           
+       
+        
+}
+    
 }

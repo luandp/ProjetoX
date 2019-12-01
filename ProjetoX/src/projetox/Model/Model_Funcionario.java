@@ -189,41 +189,48 @@ public class Model_Funcionario {
     
    
     //metodo chamado por validarLogin||TelaLogin
-   public Funcionario VerificarLogin(Funcionario test) throws Exception
+   public Funcionario VerificarLogin(String login,String senha) throws Exception
     {
      ArrayList<Funcionario> funcionarios = new ArrayList<>();
      try 
      {
-      Statement coon = banco.Abrir();   
-      String busca ="select login,senha,tipo,codigo from usuario ";
-      ResultSet resultado = coon.executeQuery(busca);
-         while (resultado.next())
-
-         {
-             
+      Statement conexao = banco.Abrir();   
+      String busca ="select Login,Senha,Cargo,CodigoPessoa from Funcionario ";
+      ResultSet resultado = conexao.executeQuery(busca);
+      
+         while(resultado.next()){
+            
              Funcionario funcionarioo = new Funcionario();
              funcionarioo.setLogin(resultado.getString("Login"));
              funcionarioo.setSenha(resultado.getString("Senha"));
              funcionarioo.setCargo(resultado.getString("Cargo"));
-             funcionarioo.setId(Integer.parseInt(resultado.getString("Codigo")));
+             funcionarioo.setId(resultado.getInt("CodigoPessoa"));
              funcionarios.add(funcionarioo);
+             
+             
          }
          for(int i =0;i<funcionarios.size();i++)
          {
-             if(funcionarios.get(i).getLogin().equals(test.getLogin())&& funcionarios.get(i).getSenha().equals(test.getSenha()))
+             if(funcionarios.get(i).getLogin().equals(login)&& funcionarios.get(i).getSenha().equals(senha))
              {
+               String buscaComplementar = "select Nome,CPF from Pessoa where Codigo = "+funcionarios.get(i).getId()+"";
+               ResultSet resultado2 = conexao.executeQuery(buscaComplementar);
+               while(resultado2.next()){
+               funcionarios.get(i).setNome(resultado2.getString("Nome"));
+               funcionarios.get(i).setCPF(resultado2.getString("CPF"));    
+               }
                return funcionarios.get(i);
              }
          }
          
      } catch (Exception e) 
      {
-         throw  new Exception(e);
+         throw  new Exception("Oi"+e);
      }
      banco.Fechar();
-     Funcionario u = new Funcionario();
-     u.setCargo("errado");
-     return u;
+     Funcionario invalido = new Funcionario();
+     invalido.setCargo("errado");
+     return invalido;
      }
    
    

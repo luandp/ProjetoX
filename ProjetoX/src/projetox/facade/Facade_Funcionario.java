@@ -42,4 +42,13 @@ public class Facade_Funcionario {
         control.validarAtualizacao(novo, id, login);
         return "validado";
     }
+    public Funcionario validar_Login(String login,String senha) throws Exception{
+        try {
+           return control.validar_Login(login,senha);
+            
+        } catch (Exception e) {
+            throw  new Exception("12345:Login ou Senha invalida");
+        }
+        
+    }
 }

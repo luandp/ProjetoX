@@ -5,6 +5,9 @@
  */
 package projetox.view;
 
+import javax.swing.JOptionPane;
+import projetox.Class.Funcionario;
+
 /**
  *
  * @author Luan Paulo
@@ -16,8 +19,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        JOptionPane.showMessageDialog(null, "");
+        
     }
+    int index = 0;
 
+    public TelaPrincipal(Funcionario funcionario) {
+        index = funcionario.getId();
+        initComponents();
+        this.setLocationRelativeTo(null);
+        if (funcionario.getCargo().equals("Funcionario")) {
+            JCadFuncionario.setVisible(false);
+            JFolha.setVisible(false);
+            jVariaveis.setVisible(false);
+           
+        }else if(funcionario.getCargo().equals("Comissionado")) {
+            JCadFuncionario.setVisible(false);
+            JCadCarro.setVisible(false);
+            JFolha.setVisible(false);
+            jVariaveis.setVisible(false);
+            JEstoque.setVisible(false);
+                     
+        }
+        
+        JOptionPane.showMessageDialog(null, "olá "+funcionario.getNome()+"\nAcesso:"+funcionario.getCargo()+"\nSeja Bem-Vindo ao Sistema","Bem Vindo", JOptionPane.INFORMATION_MESSAGE);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
