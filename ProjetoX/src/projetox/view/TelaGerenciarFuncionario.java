@@ -5,17 +5,37 @@
  */
 package projetox.view;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import projetox.Class.Funcionario;
+import projetox.facade.Facade_Funcionario;
+
 /**
  *
  * @author Matheus Freitas
  */
 public class TelaGerenciarFuncionario extends javax.swing.JFrame {
-
+    
+    
     /**
      * Creates new form Tela_Gerenciar_Usuario
      */
+    //inicializações
+        ArrayList<Funcionario> funcionarios = new ArrayList<>();
+        Facade_Funcionario fachada = new Facade_Funcionario();
+    //Criando modelo da Tabela
+    DefaultTableModel model = new DefaultTableModel();
+    int codigo_defaut = 0;
     public TelaGerenciarFuncionario() {
         initComponents();
+    }
+    public TelaGerenciarFuncionario(int codigo) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        model.setColumnIdentifiers(new String[]{"Nome", "Login", "Cargo", "Id"});
+        jTable.setModel(model);
+        codigo_defaut = codigo;
     }
 
     /**
@@ -30,11 +50,11 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
         jLabelNome = new javax.swing.JLabel();
         JBtnBuscar = new javax.swing.JButton();
         jTextBuscar = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         JBtnAtualizar = new javax.swing.JButton();
         JBtnRemover = new javax.swing.JButton();
         JBtnCadastrar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gerenciar Funcionario - ProjetoX");
@@ -49,16 +69,6 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome", "Login", "Tipo", "Código"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
         JBtnAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/loading.png"))); // NOI18N
         JBtnAtualizar.setText("Atualizar");
         JBtnAtualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,6 +79,11 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
 
         JBtnRemover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/delete.png"))); // NOI18N
         JBtnRemover.setText("Remover");
+        JBtnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnRemoverActionPerformed(evt);
+            }
+        });
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
         JBtnCadastrar.setText("Novo Funcionário");
@@ -78,28 +93,34 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
             }
         });
 
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JBtnRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JBtnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JBtnAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(JBtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(JBtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JBtnRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JBtnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JBtnAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -111,18 +132,18 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(185, 185, 185)
                         .addComponent(JBtnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(JBtnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(JBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(22, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(JBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,20 +151,65 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnBuscarActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new String[]{"Nome", "Login", "Cargo", "Id"});
+        String nome = jTextBuscar.getText();
+        try {
+            funcionarios = fachada.Listar_Funcionarios(nome);
+            for (int i = 0; i < funcionarios.size(); i++) {
+                model.addRow(new String[]{funcionarios.get(i).getNome(), funcionarios.get(i).getLogin(), funcionarios.get(i).getCargo(), String.valueOf(funcionarios.get(i).getId())});
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro: ", JOptionPane.ERROR_MESSAGE);
+        }
+        jTable.setModel(model);
     }//GEN-LAST:event_JBtnBuscarActionPerformed
 
     private void JBtnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnAtualizarActionPerformed
-        // TODO add your handling code here:
-        TelaAtualizarFuncionario TAtuF = new TelaAtualizarFuncionario();
-        TAtuF.show();
+       Funcionario funcionario = new Funcionario();
+        if (jTable.getRowCount() > 0) {
+            int index = jTable.getSelectedRow();
+            for (int i = 0; i < funcionarios.size(); i++) {
+                if (index == i) {
+                    TelaAtualizarFuncionario atualizar = new TelaAtualizarFuncionario(funcionarios.get(i));
+                    atualizar.show();
+                }
+            }
+            DefaultTableModel model = new DefaultTableModel();
+            model.setColumnIdentifiers(new String[]{"Nome", "Login", "Cargo", "Codigo"});
+            jTable.setModel(model);
+
+        }
     }//GEN-LAST:event_JBtnAtualizarActionPerformed
 
     private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
-        // TODO add your handling code here:
-        TelaCadastrarFuncionario TCadF = new TelaCadastrarFuncionario();
-        TCadF.show();
+                TelaCadastrarFuncionario TelaCad = new TelaCadastrarFuncionario();
+                TelaCad.show();
     }//GEN-LAST:event_JBtnCadastrarActionPerformed
+
+    private void JBtnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnRemoverActionPerformed
+        int id = 0;
+        String cargo = "";
+        int index = 0;
+        try {
+            index = jTable.getSelectedRow();
+            for (int i = 0; i < funcionarios.size(); i++) {
+                if (i == index) {
+                    cargo = funcionarios.get(i).getCargo();
+                    id = funcionarios.get(i).getId();
+                }
+            }
+            String result = fachada.Excluir_Funcionario(id,cargo);
+            JOptionPane.showMessageDialog(rootPane, "Usuário Removido");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new String[]{"Nome", "login", "Tipo", "Codigo"});
+        jTable.setModel(model);
+
+    }//GEN-LAST:event_JBtnRemoverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,15 +248,15 @@ public class TelaGerenciarFuncionario extends javax.swing.JFrame {
             }
         });
     }
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBtnAtualizar;
     private javax.swing.JButton JBtnBuscar;
     private javax.swing.JButton JBtnCadastrar;
     private javax.swing.JButton JBtnRemover;
     private javax.swing.JLabel jLabelNome;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable;
     private javax.swing.JTextField jTextBuscar;
     // End of variables declaration//GEN-END:variables
 }

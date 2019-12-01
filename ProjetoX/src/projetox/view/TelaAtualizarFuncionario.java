@@ -5,6 +5,10 @@
  */
 package projetox.view;
 
+import javax.swing.JOptionPane;
+import projetox.Class.Funcionario;
+import projetox.facade.Facade_Funcionario;
+
 /**
  *
  * @author Luan Paulo
@@ -17,7 +21,22 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
     public TelaAtualizarFuncionario() {
         initComponents();
     }
+    int id = 0;
+    String login;
 
+    public TelaAtualizarFuncionario(Funcionario funcionario) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        id = funcionario.getId();
+        jTextNome.setText(funcionario.getNome());
+        jTextCPF.setText(funcionario.getCPF());
+        jTextLogin.setText(funcionario.getLogin());
+        jTextSenha.setText(funcionario.getSenha());
+        JTextCargo.setSelectedItem((funcionario.getCargo()));
+        JTextSalario.setText(Double.toString(funcionario.getSalario()));
+        
+        login = funcionario.getLogin();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,33 +46,24 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextNome = new javax.swing.JTextField();
+        jTextCPF = new javax.swing.JTextField();
+        jTextSenha = new javax.swing.JPasswordField();
+        JTextSalario = new javax.swing.JTextField();
+        JTextCargo = new javax.swing.JComboBox<>();
+        JBtnAtualizar = new javax.swing.JButton();
         JLabelNome = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         JLabelCPF = new javax.swing.JLabel();
         JLabelSenha = new javax.swing.JLabel();
-        JTextSalario = new javax.swing.JTextField();
+        JLabelSenha1 = new javax.swing.JLabel();
         JLabelCargo = new javax.swing.JLabel();
+        jTextLogin = new javax.swing.JTextField();
         JLabelSalario = new javax.swing.JLabel();
-        JTextCargo = new javax.swing.JComboBox<String>();
-        JBtnAtualizar = new javax.swing.JButton();
-        JTextNome = new javax.swing.JTextField();
-        JTextCPF = new javax.swing.JTextField();
-        JTextSenha = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Atualizar Funcionário - ProjetoX");
 
-        JLabelNome.setText("Nome");
-
-        JLabelCPF.setText("CPF");
-
-        JLabelSenha.setText("Senha");
-
-        JLabelCargo.setText("Cargo");
-
-        JLabelSalario.setText("Salário");
-
-        JTextCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Funcionário", "Comissionado", "Gerente" }));
+        JTextCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionário", "Comissionado", "Gerente" }));
         JTextCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextCargoActionPerformed(evt);
@@ -61,8 +71,25 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
         });
 
         JBtnAtualizar.setText("Atualizar");
+        JBtnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnAtualizarActionPerformed(evt);
+            }
+        });
+
+        JLabelNome.setText("Nome");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Logo Menor.png"))); // NOI18N
+
+        JLabelCPF.setText("CPF");
+
+        JLabelSenha.setText("Senha");
+
+        JLabelSenha1.setText("Login");
+
+        JLabelCargo.setText("Cargo");
+
+        JLabelSalario.setText("Salário");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,54 +98,59 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelSalario)
-                                .addGap(18, 18, 18)
-                                .addComponent(JTextSalario))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelCargo)
-                                .addGap(161, 161, 161)
-                                .addComponent(JTextCargo, 0, 171, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelNome)
-                                .addGap(24, 24, 24)
-                                .addComponent(JTextNome))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelCPF)
-                                .addGap(32, 32, 32)
-                                .addComponent(JTextCPF))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JLabelSenha)
-                                .addGap(20, 20, 20)
-                                .addComponent(JTextSenha))))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JBtnAtualizar)))
+                        .addComponent(JBtnAtualizar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JLabelNome)
+                            .addComponent(JLabelCPF))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jTextNome)
+                            .addComponent(jTextCPF)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JLabelSenha)
+                                .addComponent(JLabelCargo)
+                                .addComponent(JLabelSalario))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(JLabelSenha1)
+                                .addGap(2, 2, 2)))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTextCargo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextSenha)
+                            .addComponent(JTextSalario)
+                            .addComponent(jTextLogin, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(30, 30, 30))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLabelNome)
-                    .addComponent(JTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLabelCPF)
-                    .addComponent(JTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLabelSenha1)
+                    .addComponent(jTextLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLabelSenha)
-                    .addComponent(JTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTextCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -129,16 +161,41 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
                     .addComponent(JLabelSalario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JBtnAtualizar)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTextCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextCargoActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_JTextCargoActionPerformed
+
+    private void JBtnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnAtualizarActionPerformed
+       
+        if (JTextCargo.getSelectedItem().toString().equals("Funcionario") || JTextCargo.getSelectedItem().toString().equals("Comissionado")) {
+            try {
+                fachada.verificaAtualizacao();
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+        Funcionario novo = new Funcionario();
+        try {
+            novo.setNome(jTextNome.getText());
+            novo.setCPF(jTextCPF.getText());
+            novo.setLogin(jTextLogin.getText());
+            novo.setSenha(jTextSenha.getText());
+            novo.setCargo(JTextCargo.getSelectedItem().toString());
+            fachada.validar_Atualizacao(novo, id, login);
+            JOptionPane.showMessageDialog(rootPane,"Usuário atualizado");
+            dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Erro123:", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_JBtnAtualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,7 +231,7 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
             }
         });
     }
-
+    Facade_Funcionario fachada = new Facade_Funcionario();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBtnAtualizar;
     private javax.swing.JLabel JLabelCPF;
@@ -182,11 +239,13 @@ public class TelaAtualizarFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel JLabelNome;
     private javax.swing.JLabel JLabelSalario;
     private javax.swing.JLabel JLabelSenha;
-    private javax.swing.JTextField JTextCPF;
+    private javax.swing.JLabel JLabelSenha1;
     private javax.swing.JComboBox<String> JTextCargo;
-    private javax.swing.JTextField JTextNome;
     private javax.swing.JTextField JTextSalario;
-    private javax.swing.JPasswordField JTextSenha;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextCPF;
+    private javax.swing.JTextField jTextLogin;
+    private javax.swing.JTextField jTextNome;
+    private javax.swing.JPasswordField jTextSenha;
     // End of variables declaration//GEN-END:variables
 }

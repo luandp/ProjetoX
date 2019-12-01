@@ -5,10 +5,12 @@
  */
 package projetox.Model;
 
+import java.awt.Component;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import projetox.Class.Funcionario;
 import projetox.Class.Conexao;
 
@@ -52,17 +54,35 @@ public class Model_Funcionario {
         try
         {
         Statement conexao = banco.Abrir();
-        String select = "select Nome,login,codigo,tipo from usuario where nome like '" + nome + "%'";
-        ResultSet re = conexao.executeQuery(select);
-        while (re.next())
+       // String selectJoin = "SELECT C.NOME, C.STATUS, P.DESCRICAO, P.VALOR FROM CLIENTES AS C JOIN PEDIDOS AS P ON C.IDCLIENTE = P.IDPEDIDO";
+        
+        String selectJoin2 = "select P.Codigo, P.Nome F.Login, F.Cargo from Pessoa as P join Funcionario as F on P.Codigo = F.CodigoPessoa and P.Nome like '"+nome+"%'";
+        String selectJoin3 = "select Codigo, Nome,CPF, Login,Senha,Cargo,Salario from Pessoa inner join Funcionario on Pessoa.Codigo = Funcionario.CodigoPessoa and Pessoa.Nome like '"+nome+"%'";
+        
+        /*  SELECT CategoryName, ProductName
+            FROM Categories INNER JOIN Products
+            ON Categories.CategoryID = Products.CategoryID;*/
+        String select = "select Codigo,Nome from Pessoa where nome like '" + nome + "%'";
+        ResultSet resposta = conexao.executeQuery(selectJoin3);
+        
+        while (resposta.next())
         {            
             Funcionario funcionario = new Funcionario();
-            funcionario.setNome(re.getString("Nome"));
-            funcionario.setLogin(re.getString("Login"));
-            funcionario.setCargo(re.getString("Cargo"));
-            funcionario.setId(Integer.parseInt(re.getString("Codigo")));
+            funcionario.setId(resposta.getInt("Pessoa.Codigo"));
+            funcionario.setNome(resposta.getString("Pessoa.Nome"));
+            funcionario.setCPF(resposta.getString("Pessoa.CPF"));
+            //String select2= "select Login,Cargo from Funcionario where CodigoPessoa = "+funcionario.getId()+" limit 1";
+            funcionario.setLogin(resposta.getString("Funcionario.Login"));
+            funcionario.setSenha(resposta.getString("Funcionario.Senha"));
+            Component rootPane = null;
+            //JOptionPane.showMessageDialog(rootPane, "senha:"+funcionario.getSenha());
+            funcionario.setCargo(resposta.getString("Funcionario.Cargo"));
+            funcionario.setSalario(resposta.getDouble("Funcionario.Salario"));
+            
+            /*ResultSet resultado2 = conexao.executeQuery(select2);
+            while(resultado2.next()){
+            }*/
             funcionarios.add(funcionario);
-        
         }
         }
         catch(SQLException e)
@@ -75,30 +95,36 @@ public class Model_Funcionario {
      
      
      
-     public void remover_Funcionario(int codigo)throws Exception
+     public String remover_Funcionario(int id)throws Exception
     {
         try {
-            
             Statement conexao = banco.Abrir();
-            String delete = "delete from usuario where codigo = "+codigo+"";
-            conexao.execute(delete);
+            String deleteFuncioario = "delete from Funcionario where CodigoPessoa = "+id+"";
+            conexao.execute(deleteFuncioario);
+            String deletePessoa = "delete from Pessoa where Codigo = "+id+"";
+            conexao.execute(deletePessoa);
+            
         } catch (SQLException e)
         {
             throw  new Exception("Erro delete:"+e);
         }
         banco.Fechar();
-       
+        return "Funcionario Removido com Sucesso!";
     }
      
      
      
      
-    public void atualizar_Funcionario(Funcionario novo,int codigo)throws Exception
+    public void atualizar_Funcionario(Funcionario novo,int id)throws Exception
     {
         try {
             Statement conexao = banco.Abrir();
-            String update = "update  Funcionario set Nome = '"+novo.getNome()+"',login = '"+novo.getLogin()+"',senha = '"+novo.getSenha()+"',tipo = '"+novo.getCargo()+"' where codigo = "+codigo+"";
-            conexao.executeUpdate(update);
+
+            String updateFuncionario = "update  Funcionario set Login = '"+novo.getLogin()+"',Senha = '"+novo.getSenha()+"',Cargo = '"+novo.getCargo()+"',Salario = "+novo.getSalario()+" where CodigoPessoa = "+id+"";
+            conexao.executeUpdate(updateFuncionario);
+            String updatePessoa = "update Pessoa set Nome = '"+novo.getNome()+"',CPF = '"+novo.getCPF()+"' where Codigo = "+id+"";
+            conexao.executeUpdate(updatePessoa);
+
         } catch (SQLException e) {
             throw  new Exception("Erro update: "+e);
         }
@@ -107,21 +133,21 @@ public class Model_Funcionario {
     
     
     
-    public boolean veirificarRemocao(String tipo)throws Exception
+    public boolean veirificarRemocao(String cargo)throws Exception
     {
-        if(tipo.equals("Administrador"))
+        if(cargo.equals("Gerente"))
         {
-            int numero =0;
+            int index =0;
            
         try {
             Statement conexao = banco.Abrir();
-            String select = "select tipo from usuario where tipo like '" + tipo + "%'";
+            String select = "select Cargo from Funcionario where Cargo like '" + cargo + "%'";
             ResultSet re = conexao.executeQuery(select);
             while (re.next()) 
             {                
-                numero = numero+1;
+                index = index+1;
             }
-            if(numero <=1)
+            if(index <=1)
             {
                 return true;
             }
@@ -141,7 +167,7 @@ public class Model_Funcionario {
             int numero =0;        
         try {
             Statement conexao = banco.Abrir();
-            String select = "select tipo from usuario where tipo like '" +"Administrador"+ "%'";
+            String select = "select Cargo from Funcioario where Cargo like '" +"Gerente"+ "%'";
             ResultSet re = conexao.executeQuery(select);
             while (re.next()) 
             {                
@@ -208,13 +234,13 @@ public class Model_Funcionario {
      try 
      {
       Statement coon = banco.Abrir();   
-      String busca ="select login from usuario where login = '"+login+"'";
+      String busca ="select Login from Funcionario where Login = '"+login+"'";
       ResultSet resultado = coon.executeQuery(busca);
       int conta = 0;
          while (resultado.next())
          {
              Funcionario funcionario = new Funcionario();
-             funcionario.setLogin(resultado.getString("login"));
+             funcionario.setLogin(resultado.getString("Login"));
              funcionarios.add(funcionario);
              
          }

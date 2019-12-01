@@ -5,7 +5,9 @@
  */
 package projetox.view;
 
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
+
 import projetox.facade.Facade_Funcionario;
 
 /**
@@ -157,23 +159,20 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
-//gera variaveis
         try {
         //dados de pessoa
         String nome = jTextNome.getText().trim();
         String cpf = jTextCPF.getText().trim().trim();
-        
         //dados de Funcionario      
         String login = jTextLogin.getText();
         String senha = jTextSenha.getText();
         String cargo = JTextCargo.getSelectedItem().toString();
         String salario = JTextSalario.getText().trim();
-                
         //chama view
         String result = fachada.Cadastrar_Funcionario(nome, cpf, senha, cargo, salario,login);
         JOptionPane.showMessageDialog(this, result);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Nenhum dado pode ser Nulo.\nErro:"+e);
+        } catch (HeadlessException e) {
+            JOptionPane.showMessageDialog(this, "Erro:"+e);
         }    }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
     private void JTextCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextCargoActionPerformed
