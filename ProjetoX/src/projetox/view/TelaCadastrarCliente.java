@@ -227,6 +227,8 @@ public class TelaCadastrarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_JTextCepActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        //gera variaveis
         try {
         //dados de pessoa
         String nome = JtextNome.getText().trim();
@@ -240,6 +242,7 @@ public class TelaCadastrarCliente extends javax.swing.JFrame {
         String cidade = JTextCidade.getText().trim();
         String estado = JTextEstado.getText().trim();
         String telefone = JTextTelefone.getText().trim();
+        //chama view
         String result = fachada.Cadastrar_Cliente(nome, cpf, idade, logradouro, n_casa, cep, bairro,cidade, estado, telefone);
         JOptionPane.showMessageDialog(this, result);
         } catch (Exception e) {

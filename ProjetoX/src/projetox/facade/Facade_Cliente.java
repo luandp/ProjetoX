@@ -17,8 +17,20 @@ public class Facade_Cliente {
     Controller_Cliente control = new Controller_Cliente();
     
     public String Cadastrar_Cliente(String nome, String cpf, String idade, String logradouro, String n_casa, String cep, String bairro, String cidade, String estado, String telefone){
-      //public String Cadastrar_Cliente(){     
-        return "Cliente Cadastrado com Sucesso!"
+      //recebe variaveis
+     String retorno = ""; 
+      
+     
+      //chama controller
+      retorno = control.Validar_Cadastro(nome, cpf, idade, logradouro, n_casa, cep, bairro, cidade, estado, telefone);
+        
+        
+        
+        
+        
+        
+        return retorno;
+      /*  return "Cliente Cadastrado com Sucesso!"
                 + "\nNome:"+nome+""
                 + "\nCPF:"+cpf+""
                 + "\nIdade:"+idade+""
@@ -29,7 +41,7 @@ public class Facade_Cliente {
                 + "\nCidade:"+cidade+""
                 + "\nEstado:"+estado+""
                 + "\nTelefone:"+telefone+""
-                ;
+                ;*/
         
     }
     
