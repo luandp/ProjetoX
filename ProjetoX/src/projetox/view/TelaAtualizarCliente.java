@@ -251,7 +251,6 @@ public class TelaAtualizarCliente extends javax.swing.JFrame {
             Cliente atualizado = new Cliente();
             atualizado.setId(id);
             atualizado.setNome(JTextNome.getText());
- 
             atualizado.setIdade(Integer.parseInt(JTextIdade.getText()));
             atualizado.setCPF(JTextCPF.getText());
             atualizado.setLogradouro(JTextRua.getText());
