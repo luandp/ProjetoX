@@ -36,6 +36,15 @@ public class Documento {
 			Envia os dados pro Banco
 			Recebe os dados do Banco
 		-Retorna os dados para Controller
+  
+                Create = Cadastrar
+                Read = Listar
+                Update = Atualizar
+                Delete = Remover
+    
+    
+    
+    
     */
     
     

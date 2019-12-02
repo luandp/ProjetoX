@@ -22,7 +22,9 @@ public interface Interface_Funcionario {
     
     public void atualizar_Funcionario()throws Exception;
     
-    public boolean veirificarRemocao()throws Exception;
+    public String remover_Funcionario(int id)throws Exception;
+    
+    public boolean veirificarRemocao(String cargo)throws Exception;
     
     public boolean veirificarAtualizacao()throws Exception;
     
