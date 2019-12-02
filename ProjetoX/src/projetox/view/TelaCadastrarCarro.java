@@ -39,9 +39,7 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         JTextTipo = new javax.swing.JComboBox();
         JTextModelo = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        JTextStatus = new javax.swing.JComboBox();
         JTextMarca = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -99,18 +97,8 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel17.setText("Status");
-
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("Tipo");
-
-        JTextStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disponível", "Vendido", "Locado", "Manutenção" }));
-        JTextStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTextStatusActionPerformed(evt);
-            }
-        });
 
         JTextMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,12 +234,10 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
                             .addComponent(JTextCombustivel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(JTextVeletrico123, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(JTextTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JTextStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JTextMultimidia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JTextCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1))
@@ -297,11 +283,7 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(JTextTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(7, 7, 7)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(JTextStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -360,10 +342,6 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
     private void JTextModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextModeloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTextModeloActionPerformed
-
-    private void JTextStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTextStatusActionPerformed
 
     private void JTextMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextMarcaActionPerformed
         // TODO add your handling code here:
@@ -462,7 +440,6 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
     private javax.swing.JComboBox JTextMultimidia;
     private javax.swing.JTextField JTextPlaca;
     private javax.swing.JTextField JTextPortas;
-    private javax.swing.JComboBox JTextStatus;
     private javax.swing.JComboBox JTextTipo;
     private javax.swing.JComboBox JTextVeletrico123;
     private javax.swing.JComboBox JTextarcondicionado;
@@ -476,7 +453,6 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

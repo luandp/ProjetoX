@@ -78,14 +78,12 @@
                           <Component id="JTextCombustivel" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="JTextVeletrico123" min="-2" pref="78" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel17" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Component id="JTextTipo" alignment="2" max="32767" attributes="0"/>
-                          <Component id="JTextStatus" alignment="2" max="32767" attributes="0"/>
                           <Component id="JTextMultimidia" alignment="2" max="32767" attributes="0"/>
                           <Component id="JTextCambio" alignment="2" min="-2" pref="106" max="-2" attributes="0"/>
                           <Component id="jButton1" alignment="2" min="-2" max="-2" attributes="0"/>
@@ -144,11 +142,6 @@
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="JTextTipo" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                                           <Component id="jLabel15" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="JTextStatus" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                                          <Component id="jLabel17" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -289,32 +282,11 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTextModeloActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel17">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Status"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel15">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value="Tipo"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="JTextStatus">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Dispon&#xed;vel"/>
-            <StringItem index="1" value="Vendido"/>
-            <StringItem index="2" value="Locado"/>
-            <StringItem index="3" value="Manuten&#xe7;&#xe3;o"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTextStatusActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="JTextMarca">
       <Events>
