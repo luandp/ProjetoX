@@ -16,12 +16,13 @@ import projetox.Class.Carro;
 import projetox.Class.Carro;
 import projetox.Class.Conexao;
 import projetox.Class.Carro;
+import projetox.interfaces.Interface_Carro;
 
 /**
  *
  * @author Luan Paulo
  */
-public class Model_Carro {
+public class Model_Carro implements Interface_Carro{
          Conexao banco = new Conexao();
     
     public String Cadastrar_Carro(Carro novo){
@@ -29,25 +30,6 @@ public class Model_Carro {
         try {
             Statement conexao = banco.Abrir();
             JOptionPane.showMessageDialog(null, "Chegou no insert");
-            /*String InsertCarro = "insert into Carro Placa, Marca, Modelo, Cor, Ano, Portas, Arcondicionado, Direcao, Vidroeletrico, Alarme, Classe, Combustivel, Cambio, Multimidia, Tipo, Status values "
-                    + "','"+novo.getPlaca()
-                    + "','"+novo.getMarca()
-                    + "','"+novo.getModelo()
-                    + "','"+novo.getCor()
-                    + "','"+novo.getAno()
-                    + "','"+novo.getPortas()
-                    + "','"+novo.isArcondicionado()
-                    + "','"+novo.getDirecao()
-                    + "','"+novo.isVeletrico()
-                    + "','"+novo.isAlarme()
-                    + "','"+novo.getClasse()
-                    + "','"+novo.getCombustivel()
-                    + "','"+true//
-                    + "','"+novo.isMultimidia()
-                    + "','"+novo.getTipo()
-                    + "','"+novo.getStatus()
-                    +"')";
-            */
             String InsertCarro2 = "insert into Carro "
                     + "(Placa,Marca,Modelo,Cor,Ano,Portas,Arcondicionado,Direcao,Vidroeletrico,Alarme,Classe,Combustivel,Cambio,Multimidia,Tipo,Status)"
                     + "values"
@@ -208,5 +190,30 @@ public class Model_Carro {
         return false;
 
         }
+
+    @Override
+    public String Cadastrar_Carro() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Carro> buscar_Carro() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String remover_Carro() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void atualizar_Carro() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean veirificarRemocao() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 }

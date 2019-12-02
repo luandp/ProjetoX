@@ -5,6 +5,17 @@
  */
 package projetox.view;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import projetox.Class.Carro;
+import projetox.Class.Cliente;
+import projetox.Class.Venda;
+import projetox.controller.Controller_Venda;
+
 /**
  *
  * @author Luan Paulo
@@ -14,8 +25,24 @@ public class TelaVenda extends javax.swing.JFrame {
     /**
      * Creates new form TelaCadastrarVenda
      */
+    
+    DefaultTableModel modeloLocacao = new DefaultTableModel();
+    Controller_Venda validar = new Controller_Venda();
+    ArrayList<Carro> carros = new ArrayList<>();
+    
     public TelaVenda() {
         initComponents();
+            this.setLocationRelativeTo(null);
+
+        DateFormat Formatodata = new SimpleDateFormat("dd/MM/yyyy");
+        Date data = new Date();
+        JTextData.setText(Formatodata.format(data));
+        jTable1.setModel(modeloLocacao);
+        Date banco = new Date();
+
+        modeloLocacao.setColumnIdentifiers(new String[]{"Nome", "Codigo", "Tipo", "valor"});
+
+    
     }
 
     /**
@@ -270,11 +297,62 @@ public class TelaVenda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBtnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnFinalizarActionPerformed
-
+        Venda venda = new Venda();
+        ArrayList<Carro> fi = new ArrayList<>();
+        Cliente cli = new Cliente();
+        if (!"".equals(JTextCodigo.getText())) {
+            try {
+                cli.setId(Integer.parseInt(JTextCodigo.getText()));
+                venda.setCliente(cli);
+            } catch (Exception e) {
+                cli.setId(0);
+                venda.setCliente(cli);
+            }
+        }
+        {
+               if (!"".equals(Valor.getText())) {
+                try {
+                    venda.setPreco(Double.parseDouble(Valor.getText()));
+                } catch (Exception e) {
+                    venda.setPreco(0);
+                }
+            }
+            venda.setData(JTextData.getText());
+            if (modeloLocacao.getRowCount() > 0) {
+                for (int i = 0; i < carros.size(); i++) {
+                    Carro f = new Carro();
+                    f.setId(carros.get(i).getId());
+                    fi.add(f);
+                }
+            }
+            venda.setCarro(fi);
+            try {
+                validar.validarLocacao(venda);
+                JOptionPane.showMessageDialog(JTextNome, "Locação Concluida");
+                dispose();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(JTextNome, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
     }//GEN-LAST:event_JBtnFinalizarActionPerformed
 
     private void JBtnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnRemoverActionPerformed
+            //aqui
+              Double valor = 5.66;
+              if (jTable1.getRowCount() > 0) {
+            double a = Double.parseDouble(Valor.getText());
+            String V = String.valueOf(carros.get(jTable1.getSelectedRow()).getId());//.substring(0, 4);
+            a = a - Double.parseDouble(V);
+            modeloLocacao.removeRow(jTable1.getSelectedRow());
+            Valor.setText(String.valueOf(a).substring(0, 4));
+            JOptionPane.showMessageDialog(JTextNome, "Filme Removido da lista");
+            int index = jTable1.getSelectedRowCount();
+            carros.remove(index);
 
+        } else {
+            JOptionPane.showMessageDialog(JTextNome, "Selecione o Filme a ser Retirado");
+        }
     }//GEN-LAST:event_JBtnRemoverActionPerformed
 
     private void JTextNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextNomeActionPerformed
@@ -282,13 +360,14 @@ public class TelaVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_JTextNomeActionPerformed
 
     private void jBPesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarClienteActionPerformed
-                    TelaConsultaCliente tcc = new TelaConsultaCliente();
-                    tcc.show();
+       String nome = JTextNome.getText();
+        TelaConsultaCliente c = new TelaConsultaCliente(nome, JTextNome, JTextCodigo);
+        c.show();
     }//GEN-LAST:event_jBPesquisarClienteActionPerformed
 
     private void jBPesquisarCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarCarroActionPerformed
-                    TelaConsultaCarro Telacc = new TelaConsultaCarro();
-                    Telacc.show();
+                    TelaConsultaCarro c = new TelaConsultaCarro(JTextModelo.getText(), modeloLocacao, Valor, carros);
+                     c.show();
     }//GEN-LAST:event_jBPesquisarCarroActionPerformed
 
     /**

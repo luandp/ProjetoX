@@ -12,12 +12,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import projetox.Class.Cliente;
 import projetox.Class.Conexao;
+import projetox.interfaces.Interface_Cliente;
 
 /**
  *
  * @author Luan Paulo
  */
-public class Model_Cliente {
+public class Model_Cliente implements Interface_Cliente{
          Conexao banco = new Conexao();
     
     public String Cadastrar_Cliente(Cliente novo){
@@ -42,10 +43,6 @@ public class Model_Cliente {
             
         }
     }
-    
-         
-      
-      
      public ArrayList<Cliente> buscar_Cliente(String nome) throws Exception
     {
         ArrayList<Cliente> clientes = new ArrayList<>();
@@ -177,6 +174,26 @@ public class Model_Cliente {
         return false;
 
         }
+
+    @Override
+    public String Cadastrar_Cliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Cliente> buscar_Cliente() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String remover_Cliente() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void atualizar_Cliente() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
 }

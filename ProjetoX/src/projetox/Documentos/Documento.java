@@ -15,13 +15,13 @@ public class Documento {
             Gerenciar
                 Carro
                     Buscar - ok
-                    Atualizar - ok
-                    Remover - Erro
+                    Atualizar - OK (ATUALIZA TODOS OS CARROS)
+                    Remover - OK
                     Cadastrar - ok
                 Cliente
                     Buscar - ok
                     Atualizar - ok
-                    Remover - Erro
+                    Remover - ok
                     Cadastrar - ok
                 Funcionario
                     Buscar - ok

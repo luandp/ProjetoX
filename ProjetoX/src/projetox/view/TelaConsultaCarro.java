@@ -5,11 +5,26 @@
  */
 package projetox.view;
 
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import projetox.Class.Carro;
+import projetox.controller.Controller_Carro;
+
 /**
  *
  * @author Luan Paulo
  */
 public class TelaConsultaCarro extends javax.swing.JFrame {
+
+    DefaultTableModel model = new DefaultTableModel();
+    DefaultTableModel modeloex = new DefaultTableModel();
+    Carro carro = new Carro();
+    Controller_Carro regra = new Controller_Carro();
+    JLabel valoor;
+    ArrayList<Carro> arr = new ArrayList<>();
+    ArrayList<Carro> arri = new ArrayList<>();
 
     /**
      * Creates new form TelaConsultaCarro
@@ -17,6 +32,26 @@ public class TelaConsultaCarro extends javax.swing.JFrame {
     public TelaConsultaCarro() {
         initComponents();
     }
+    /**/
+        public TelaConsultaCarro(String modelo, DefaultTableModel mo, JLabel valor, ArrayList<Carro> arryCarros) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        model.setColumnIdentifiers(new String[]{"Nome", "Codigo", "Tipo", "valor", "Situação"});
+        jTable1.setModel(model);
+        try {
+            arr = regra.buscaCarro(modelo);
+            for (int i = 0; i < arr.size(); i++) {
+                model.addRow(new String[]{arr.get(i).getModelo(), String.valueOf(arr.get(i).getId()), arr.get(i).getTipo(), String.valueOf(arr.get(i).getId()), arr.get(i).getStatus()});
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+        modeloex = model;
+        model = mo;
+        valoor = valor;
+        arri = arryCarros;
+    }
+    /**/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -105,56 +140,56 @@ public class TelaConsultaCarro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- /*       DefaultTableModel modelo = new DefaultTableModel();
+        DefaultTableModel modelo = new DefaultTableModel();
         modelo.setColumnIdentifiers(new String[]{"Nome", "Codigo", "Tipo", "valor", "Situação"});
         String nome = jTextField1.getText();
         try {
-            arr = regra.buscaFilme(nome);
+            arr = regra.buscaCarro(nome);
             for (int i = 0; i < arr.size(); i++) {
-                modelo.addRow(new String[]{arr.get(i).getNome(), String.valueOf(arr.get(i).getCodigo()), arr.get(i).getTipo(), String.valueOf(arr.get(i).getValor()), arr.get(i).getSituacao()});
+                modelo.addRow(new String[]{arr.get(i).getModelo(), String.valueOf(arr.get(i).getId()), arr.get(i).getTipo(), String.valueOf(arr.get(i).getId()), arr.get(i).getStatus()});
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        jTable1.setModel(modelo);*/
+        jTable1.setModel(modelo);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-   /*     Tela_Locacao lo = new Tela_Locacao();
+         TelaVenda lo = new TelaVenda();
         if (jTable1.getRowCount() > 0) {
             int index = jTable1.getSelectedRow();
             for (int i = 0; i < arr.size(); i++) {
                 if (i == index) {
-                    filme.setNome(arr.get(i).getNome());
-                    filme.setCodigo(arr.get(i).getCodigo());
-                    filme.setTipo(arr.get(i).getTipo());
-                    filme.setValor(arr.get(i).getValor());
-                    filme.setSituacao(arr.get(i).getSituacao());
+                    carro.setModelo(arr.get(i).getModelo());
+                    carro.setId(arr.get(i).getId());
+                    carro.setTipo(arr.get(i).getTipo());
+                    carro.setId(arr.get(i).getId());
+                    carro.setStatus(arr.get(i).getStatus());
                 }
             }
             for (int i = 0; i < model.getRowCount(); i++) {
-                if (filme.getCodigo() == Integer.parseInt(model.getValueAt(i, 1).toString())) {
-                    JOptionPane.showMessageDialog(rootPane, "Você ja escolheu esse Filme ");
+                if (carro.getId()== Integer.parseInt(model.getValueAt(i, 1).toString())) {
+                    JOptionPane.showMessageDialog(rootPane, "Você ja escolheu esse Carro ");
                     return;
                 }
             }
             for (int i = 0; i < modeloex.getRowCount(); i++) {
-                if (filme.getSituacao().equals("Não Disponivel")) {
-                    JOptionPane.showMessageDialog(rootPane, "Este Filme não está disponivel");
+                if (carro.getStatus().equals("Não Disponivel")) {
+                    JOptionPane.showMessageDialog(rootPane, "Este Carro não está disponivel");
                     return;
                 }
             }
-            model.addRow(new String[]{filme.getNome(), String.valueOf(filme.getCodigo()), filme.getTipo(), String.valueOf(filme.getValor())});
+            model.addRow(new String[]{carro.getModelo(), String.valueOf(carro.getId()), carro.getTipo(), String.valueOf(carro.getId())});
             dispose();
             arri.add(arr.get(jTable1.getSelectedRow()));
             double valo = 0;
             for (int i = 0; i < arri.size(); i++) {
-                valo = valo + arri.get(i).getValor();
+                valo = valo + arri.get(i).getId();
             }
             int in = jTable1.getSelectedRow();
             valoor.setText(String.valueOf(valo));
 
-        }*/
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

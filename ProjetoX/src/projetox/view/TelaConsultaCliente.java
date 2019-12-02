@@ -5,17 +5,53 @@
  */
 package projetox.view;
 
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+import projetox.Class.Cliente;
+import projetox.controller.Controller_Cliente;
+import projetox.facade.Facade_Cliente;
+
 /**
  *
  * @author Luan Paulo
  */
 public class TelaConsultaCliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaConsultaCliente
-     */
+    DefaultTableModel model = new DefaultTableModel();
+    Facade_Cliente fachada = new Facade_Cliente();
+    Controller_Cliente control = new Controller_Cliente();
+    
+    JTextField noome;
+    JLabel jLabelcodigo;
+    ArrayList<Cliente> clientes = new ArrayList<>();
+    
+    
+    public TelaConsultaCliente(String nomecliente, JTextField nome, JLabel codigo) {
+        initComponents();
+       model.setColumnIdentifiers(new String[]{"Nome", "CPF", "codigo"});
+        jTable1.setModel(model);
+
+        this.setLocationRelativeTo(null);
+
+        String nomee = nomecliente;
+        noome = nome;
+        jLabelcodigo = codigo;
+        try {
+            clientes = control.validarConsultaDeNome(nomee);
+            for (int i = 0; i < clientes.size(); i++) {
+                model.addRow(new String[]{clientes.get(i).getNome(), String.valueOf(clientes.get(i).getCPF()), String.valueOf(clientes.get(i).getId())});
+
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex, "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     public TelaConsultaCliente() {
         initComponents();
+
     }
 
     /**
@@ -105,33 +141,33 @@ public class TelaConsultaCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  /*      DefaultTableModel table = new DefaultTableModel();
+     DefaultTableModel table = new DefaultTableModel();
         table.setColumnIdentifiers(new String[]{"Nome", "CPF", "codigo"});
         String nome = jTextField1.getText();
         try {
-            arr = regra.validarConsultaDeNome(nome);
-            for (int i = 0; i < arr.size(); i++) {
-                table.addRow(new String[]{arr.get(i).getNome(), String.valueOf(arr.get(i).getCpf()), String.valueOf(arr.get(i).getCodigo())});
+            clientes = control.validarConsultaDeNome(nome);
+            for (int i = 0; i < clientes.size(); i++) {
+                table.addRow(new String[]{clientes.get(i).getNome(), String.valueOf(clientes.get(i).getCPF()), String.valueOf(clientes.get(i).getId())});
             }
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        jTable1.setModel(table);*/
+        jTable1.setModel(table);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-  /*      if (jTable1.getRowCount() > 0) {
+  if (jTable1.getRowCount() > 0) {
             int index = jTable1.getSelectedRow();
-            for (int i = 0; i < arr.size(); i++) {
+            for (int i = 0; i < clientes.size(); i++) {
                 if (index == i) {
-                    noome.setText(arr.get(i).getNome());
-                    jLabelcodigo.setText(String.valueOf(arr.get(i).getCodigo()));
+                    noome.setText(clientes.get(i).getNome());
+                    jLabelcodigo.setText(String.valueOf(clientes.get(i).getId()));
                     dispose();
                 }
             }
         }
-*/
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

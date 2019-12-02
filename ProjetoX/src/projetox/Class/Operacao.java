@@ -14,7 +14,15 @@ public class Operacao {
         Funcionario funcionario;
         Cliente cliente;
         Carro carro;
-
+public Operacao() {
+        this.id = 0;
+        Funcionario funcionario = new Funcionario();
+        this.funcionario = funcionario;
+        Cliente cliente = new Cliente();
+        this.cliente = cliente;
+        Carro carro = new Carro();
+        this.carro = carro;
+    }
     public Operacao(int id, Funcionario funcionario, Cliente cliente, Carro carro) {
         this.id = id;
         this.funcionario = funcionario;

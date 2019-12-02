@@ -5,18 +5,30 @@
  */
 package projetox.Class;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
  *
  * @author Luan Paulo
  */
+
+        
 public class Venda extends Operacao{
         double preco;
         int parcelas;
-        Date data;
-
-    public Venda(double preco, int parcelas, Date data, int id, Funcionario funcionario, Cliente cliente, Carro carro) {
+        String data;
+        Funcionario fun = new Funcionario();
+        Cliente cli = new Cliente();
+        Carro ca = new Carro();
+    public Venda(){
+        super();
+        this.preco = preco;
+        this.parcelas = parcelas;
+        this.data = data;
+        
+    }
+    public Venda(double preco, int parcelas, String data, int id, Funcionario funcionario, Cliente cliente, Carro carro) {
         super(id, funcionario, cliente, carro);
         this.preco = preco;
         this.parcelas = parcelas;
@@ -41,12 +53,16 @@ public class Venda extends Operacao{
         this.parcelas = parcelas;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
+    }
+
+    public void setCarro(ArrayList<Carro> fi) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
         

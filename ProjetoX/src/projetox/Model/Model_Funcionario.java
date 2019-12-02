@@ -13,12 +13,13 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import projetox.Class.Funcionario;
 import projetox.Class.Conexao;
+import projetox.interfaces.Interface_Funcionario;
 
 /**
  *
  * @author Luan Paulo
  */
-public class Model_Funcionario {
+public class Model_Funcionario implements Interface_Funcionario{
          Conexao banco = new Conexao();
     
     public String Cadastrar_Funcionario(Funcionario novo){

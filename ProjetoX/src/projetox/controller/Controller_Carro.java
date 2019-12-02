@@ -458,4 +458,10 @@ public class Controller_Carro {
             return ""+e;
         }   
     }
+    public ArrayList<Carro> buscaCarro(String modelo)throws Exception
+    {
+        ArrayList<Carro> Carros = new ArrayList<>();
+       Carros =  model.buscar_Carro(modelo);
+       return  Carros;
+    }
 }

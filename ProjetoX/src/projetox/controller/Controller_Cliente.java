@@ -125,5 +125,11 @@ public class Controller_Cliente {
             return model.atualizar_Cliente(novo,id);
             
     }
+    public ArrayList<Cliente> validarConsultaDeNome(String nome) throws Exception
+    {
+        ArrayList<Cliente> arryclientes = new ArrayList<>();
+        arryclientes = model.buscar_Cliente(nome);
+        return arryclientes;
+    }
    
 }
