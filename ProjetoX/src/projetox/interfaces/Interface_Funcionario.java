@@ -18,9 +18,9 @@ public interface Interface_Funcionario {
     
     public ArrayList<Funcionario> buscar_Funcionario(String nome) throws Exception;
     
-    public String remover_Funcionario(int id)throws Exception;
-    
     public void atualizar_Funcionario(Funcionario novo,int id)throws Exception;
+    
+    public String remover_Funcionario(int id)throws Exception;
     
     public boolean veirificarRemocao(String cargo)throws Exception;
     
