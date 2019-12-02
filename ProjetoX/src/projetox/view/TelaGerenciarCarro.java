@@ -158,7 +158,7 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
         try {
             carros = fachada.Listar_Carros(nome);
             for (int i = 0; i < carros.size(); i++) {
-                model.addRow(new String[]{carros.get(i).getModelo(), carros.get(i).getPlaca(), String.valueOf(carros.get(i).getId()), Boolean.toString(carros.get(i).isStatus())});
+                model.addRow(new String[]{carros.get(i).getModelo(), carros.get(i).getPlaca(), String.valueOf(carros.get(i).getId()), carros.get(i).getStatus()});
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro: ", JOptionPane.ERROR_MESSAGE);

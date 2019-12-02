@@ -42,7 +42,7 @@ public class Model_Carro {
                     + "','"+novo.isCambioauto()
                     + "','"+novo.getCombustivel()
                     + "','"+novo.isMultimidia()
-                    + "','"+novo.isStatus()
+                    + "','"+novo.getStatus()
                     + "','"+novo.getTipo()+"')";
             conexao.execute(InsertCarro);      
             return  "Carro Cadastrado com Sucesso!";
@@ -78,7 +78,7 @@ public class Model_Carro {
             carro.setCombustivel(resposta.getString("Combustivel"));
             carro.setCambioauto(resposta.getBoolean("Cambio"));
             carro.setMultimidia(resposta.getBoolean("Multimidia"));
-            carro.setStatus(resposta.getBoolean("Status"));
+            carro.setStatus(resposta.getString("Status"));
           
             /*ResultSet resultado2 = conexao.executeQuery(select2);
             while(resultado2.next()){
@@ -121,7 +121,7 @@ public class Model_Carro {
         try {
             Statement conexao = banco.Abrir();
 
-            String updateCarro = "update  Carro set Placa = '"+novo.getPlaca()+"',Marca = '"+novo.getMarca()+"',Modelo = '"+novo.getModelo()+"',Cor = '"+novo.getCor()+"',Ano = '"+novo.getAno()+"',Portas = '"+novo.getPortas()+"',Arcondicionado = '"+novo.isArcondicionado()+"',Direcao = '"+novo.getDirecao()+"',Vidroeletrico = '"+novo.isVeletrico()+"',Alarme = '"+novo.isAlarme()+"',Tipo = '"+novo.getTipo()+"',Combustivel = '"+novo.getCombustivel()+"',Cambio = '"+novo.isCambioauto()+"',Multimidia = '"+novo.isMultimidia()+"',Status = "+novo.isStatus()+" where ModeloCarro = "+Modelo+"";
+            String updateCarro = "update  Carro set Placa = '"+novo.getPlaca()+"',Marca = '"+novo.getMarca()+"',Modelo = '"+novo.getModelo()+"',Cor = '"+novo.getCor()+"',Ano = '"+novo.getAno()+"',Portas = '"+novo.getPortas()+"',Arcondicionado = '"+novo.isArcondicionado()+"',Direcao = '"+novo.getDirecao()+"',Vidroeletrico = '"+novo.isVeletrico()+"',Alarme = '"+novo.isAlarme()+"',Tipo = '"+novo.getTipo()+"',Combustivel = '"+novo.getCombustivel()+"',Cambio = '"+novo.isCambioauto()+"',Multimidia = '"+novo.isMultimidia()+"',Status = "+novo.getStatus()+" where ModeloCarro = "+Modelo+"";
             conexao.executeUpdate(updateCarro);
 
 
