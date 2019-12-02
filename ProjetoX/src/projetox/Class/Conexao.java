@@ -22,7 +22,7 @@ public class Conexao {
         //Funcao que tenta abrir conexao com o Banco, pega erros e rapassa para a camada superior
         public Statement Abrir() throws Exception{
             try {
-                String nomedoarquivo = "db";
+                String nomedoarquivo = "db1";
                 String tipodoarquivo = ".accdb";
                 String tipodeconexao = "jdbc:ucanaccess://";
                 conexao = DriverManager.getConnection( tipodeconexao + nomedoarquivo + tipodoarquivo );
