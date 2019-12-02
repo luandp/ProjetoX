@@ -6,6 +6,7 @@
 package projetox.view;
 
 import javax.swing.JOptionPane;
+import projetox.facade.Facade_Carro;
 
 /**
  *
@@ -388,24 +389,24 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
             String placa = JTextPlaca.getText().trim();
             String marca = JTextMarca.getText().trim();
             String modelo = JTextModelo.getText().trim();
-            String modelo = JTextModelo.getText().trim();
             String cor = JTextCor.getText().trim();
             String ano = JTextAno.getText().trim();
             String portas = JTextPortas.getText().trim();
-            String direcao = JTextDirecao.getText().trim();
-            String arcondicionado = JTextArcondicionado.getText().trim();
-            String veletrico = JTextVeletrico.getText().trim();
-            String alarme = JTextAlarme.getText().trim();
-            String classe = JTextClasse.getText().trim();
-            String combustivel = JTextCombustivel.getText().trim();
-            String cambio = JTextCambio.getText().trim();
-            String multimidia = JTextMultimidia.getText().trim();
-            String tipo = JTextTipo.getText().trim();
-            String status = JTextStatus.getText().trim();
+            String direcao = JTextDirecao.getSelectedItem().toString();
+            String arcondicionado = JTextarcondicionado.getSelectedItem().toString();
+            String veletrico = JTextVeletrico.getSelectedItem().toString();
+            String alarme = JTextAlarme.getSelectedItem().toString();
+            String classe = JTextClasse.getSelectedItem().toString();
+            String combustivel = JTextCombustivel.getSelectedItem().toString();
+            String cambio = JTextCambio.getSelectedItem().toString();
+            String multimidia = JTextMultimidia.getSelectedItem().toString();
+            String tipo = JTextTipo.getSelectedItem().toString();
+            String status = JTextStatus.getSelectedItem().toString();
             
             //chama view
-            String result = fachada.Cadastrar_Carro(nome, cpf, idade, logradouro, n_casa, cep, bairro,cidade, estado, telefone);
-            JOptionPane.showMessageDialog(this, result);*/
+            //String result = fachada.Cadastrar_Carro();
+            String result = "";
+            JOptionPane.showMessageDialog(this, result);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Nenhum dado pode ser Nulo.\nErro:"+e);
         }
@@ -450,7 +451,7 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
             }
         });
     }
-
+    Facade_Carro fachada = new Facade_Carro();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox JTextAlarme;
     private javax.swing.JTextField JTextAno;
