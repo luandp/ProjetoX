@@ -6,6 +6,7 @@
 package projetox.facade;
 
 import java.util.ArrayList;
+import projetox.Class.Carro;
 import projetox.controller.Controller_Carro;
 
 /**
@@ -60,5 +61,9 @@ public class Facade_Carro {
     
         control.Validar_Atualizar();
         return "";
+    }
+    public ArrayList Listar_Carros(String nome) throws Exception{
+        ArrayList<Carro> carros  = new ArrayList<>();
+        return control.ValidarBusca(nome);
     }
 }

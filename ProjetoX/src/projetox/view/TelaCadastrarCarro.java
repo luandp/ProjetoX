@@ -383,7 +383,7 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
 
         //gera variaveis
         try {
-
+/*
             //dados de carro
             String placa = JTextPlaca.getText().trim();
             String marca = JTextMarca.getText().trim();
@@ -405,7 +405,7 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
             
             //chama view
             String result = fachada.Cadastrar_Carro(nome, cpf, idade, logradouro, n_casa, cep, bairro,cidade, estado, telefone);
-            JOptionPane.showMessageDialog(this, result);
+            JOptionPane.showMessageDialog(this, result);*/
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Nenhum dado pode ser Nulo.\nErro:"+e);
         }

@@ -5,6 +5,12 @@
  */
 package projetox.view;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import projetox.Class.Carro;
+import projetox.facade.Facade_Carro;
+
 /**
  *
  * @author Luan Paulo
@@ -14,9 +20,24 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
     /**
      * Creates new form TelaGerenciarCarro
      */
+         //inicializações
+        ArrayList<Carro> carros = new ArrayList<>();
+        Facade_Carro fachada = new Facade_Carro();
+    //Criando modelo da Tabela
+    DefaultTableModel model = new DefaultTableModel();
+    int codigo_defaut = 0;
     public TelaGerenciarCarro() {
         initComponents();
         
+        
+    }
+    public TelaGerenciarCarro(int codigo) {
+        
+        initComponents();
+        this.setLocationRelativeTo(null);
+        model.setColumnIdentifiers(new String[]{"Modelo", "Placa", "Id", "Status"});
+        jTable.setModel(model);
+        codigo_defaut = codigo;
         
     }
 
@@ -29,27 +50,17 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         JBtnAtualizar = new javax.swing.JButton();
         JBtnRemover = new javax.swing.JButton();
         JBtnCadastrar = new javax.swing.JButton();
         jLabelNome = new javax.swing.JLabel();
         JBtnBuscar = new javax.swing.JButton();
         jTextBuscar = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gerenciar Carros - ProjetoX");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nome", "Login", "Tipo", "Código"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         JBtnAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/loading.png"))); // NOI18N
         JBtnAtualizar.setText("Atualizar");
@@ -75,6 +86,16 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
             }
         });
 
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,8 +104,8 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JBtnRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JBtnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -108,17 +129,17 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JBtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(185, 185, 185)
                         .addComponent(JBtnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(JBtnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(JBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -133,7 +154,18 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
     }//GEN-LAST:event_JBtnAtualizarActionPerformed
 
     private void JBtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnBuscarActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new String[]{"Modelo", "Placa", "Id", "Status"});
+        String nome = jTextBuscar.getText();
+        try {
+            carros = fachada.Listar_Carros(nome);
+            for (int i = 0; i < carros.size(); i++) {
+                model.addRow(new String[]{carros.get(i).getModelo(), carros.get(i).getPlaca(), String.valueOf(carros.get(i).getId()), Boolean.toString(carros.get(i).isStatus())});
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro: ", JOptionPane.ERROR_MESSAGE);
+        }
+        jTable.setModel(model);   
     }//GEN-LAST:event_JBtnBuscarActionPerformed
 
     /**
@@ -177,8 +209,8 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
     private javax.swing.JButton JBtnCadastrar;
     private javax.swing.JButton JBtnRemover;
     private javax.swing.JLabel jLabelNome;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable;
     private javax.swing.JTextField jTextBuscar;
     // End of variables declaration//GEN-END:variables
 }

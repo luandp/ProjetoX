@@ -5,7 +5,9 @@
  */
 package projetox.controller;
 
+import java.util.ArrayList;
 import projetox.Class.Carro;
+import projetox.Class.Cliente;
 import projetox.Model.Model_Carro;
 
 /**
@@ -48,7 +50,10 @@ public class Controller_Carro {
         return "";
     }
     
-    public String ValidarBusca(){
-        return "";
+    public ArrayList<Carro> ValidarBusca(String nome)throws Exception
+    {
+        ArrayList<Carro> carros = new ArrayList();
+        carros = model.buscar_Carro(nome);
+        return carros;
     }
 }
