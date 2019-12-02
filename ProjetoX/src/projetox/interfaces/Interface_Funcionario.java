@@ -14,20 +14,20 @@ import projetox.Class.Funcionario;
  */
 public interface Interface_Funcionario {
     
-    public String Cadastrar_Funcionario(Funcionario novo);
+    public String Cadastrar_Funcionario();
     
-    public ArrayList<Funcionario> buscar_Funcionario(String nome) throws Exception;
+    public ArrayList<Funcionario> buscar_Funcionario() throws Exception;
     
-    public String remover_Funcionario(int id)throws Exception;
+    public String remover_Funcionario()throws Exception;
     
-    public void atualizar_Funcionario(Funcionario novo,int id)throws Exception;
+    public void atualizar_Funcionario()throws Exception;
     
-    public boolean veirificarRemocao(String cargo)throws Exception;
+    public boolean veirificarRemocao()throws Exception;
     
     public boolean veirificarAtualizacao()throws Exception;
     
-    public Funcionario VerificarLogin(String login,String senha) throws Exception;
+    public Funcionario VerificarLogin() throws Exception;
     
-    public boolean verificarLoginDisponivel(String login) throws Exception;
+    public boolean verificarLoginDisponivel() throws Exception;
     
 }

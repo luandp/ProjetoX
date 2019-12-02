@@ -14,15 +14,15 @@ import projetox.Class.Carro;
  */
 public interface Interface_Carro {
     
-    public String Cadastrar_Carro(Carro novo);
+    public String Cadastrar_Carro();
     
-    public ArrayList<Carro> buscar_Carro(String modelo) throws Exception;
+    public ArrayList<Carro> buscar_Carro() throws Exception;
     
-    public String remover_Carro(String Modelo)throws Exception;
+    public String remover_Carro()throws Exception;
     
-    public void atualizar_Carro(Carro novo,String Modelo)throws Exception;
+    public void atualizar_Carro()throws Exception;
     
-    public boolean veirificarRemocao(String cargo)throws Exception;
+    public boolean veirificarRemocao()throws Exception;
     
     public boolean veirificarAtualizacao()throws Exception;
     

@@ -5,10 +5,20 @@
  */
 package projetox.interfaces;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Luan Paulo
  */
 public interface Interface_FolhaPagamento {
+    
+    public String Cadastrar_FolhaPagamento();
+    
+    public ArrayList<FolhaPagamento> buscar_FolhaPagamento() throws Exception;
+    
+    public String remover_FolhaPagamento()throws Exception;
+    
+    public void atualizar_FolhaPagamento()throws Exception;
     
 }

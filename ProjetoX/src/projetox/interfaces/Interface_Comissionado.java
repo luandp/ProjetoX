@@ -5,10 +5,22 @@
  */
 package projetox.interfaces;
 
+import java.util.ArrayList;
+import projetox.Class.Comissionado;
+
 /**
  *
- * @author Luan Paulo
+ * @author Matheus Freitas
  */
 public interface Interface_Comissionado {
+    
+    public String Cadastrar_Comissionado();
+    
+    public ArrayList<Comissionado> buscar_Comissionado() throws Exception;
+    
+    public String remover_Comissionado()throws Exception;
+    
+    public void atualizar_Comissionado()throws Exception;
+    
     
 }
