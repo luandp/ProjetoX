@@ -401,7 +401,7 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
         String classe = JTextClasse.getSelectedItem().toString();
         String combustivel = JTextCombustivel.getSelectedItem().toString();
         String cambio = JTextCambio.getSelectedItem().toString();
-        
+        //Texto Padrão
         //chama view
         String result = fachada.Cadastrar_Carro(placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, classe, ano, combustivel, cambio, cambio, portas);
         JOptionPane.showMessageDialog(this, result);
