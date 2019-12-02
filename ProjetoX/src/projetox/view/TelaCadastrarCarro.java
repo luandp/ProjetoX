@@ -382,35 +382,7 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        //gera variaveis
-        try {
-/*
-            //dados de carro
-            String placa = JTextPlaca.getText().trim();
-            String marca = JTextMarca.getText().trim();
-            String modelo = JTextModelo.getText().trim();
-            String cor = JTextCor.getText().trim();
-            String ano = JTextAno.getText().trim();
-            String portas = JTextPortas.getText().trim();
-            String direcao = JTextDirecao.getSelectedItem().toString();
-            String arcondicionado = JTextarcondicionado.getSelectedItem().toString();
-            String veletrico = JTextVeletrico.getSelectedItem().toString();
-            String alarme = JTextAlarme.getSelectedItem().toString();
-            String classe = JTextClasse.getSelectedItem().toString();
-            String combustivel = JTextCombustivel.getSelectedItem().toString();
-            String cambio = JTextCambio.getSelectedItem().toString();
-            String multimidia = JTextMultimidia.getSelectedItem().toString();
-            String tipo = JTextTipo.getSelectedItem().toString();
-            String status = JTextStatus.getSelectedItem().toString();
-            
-            //chama view
-            //String result = fachada.Cadastrar_Carro();
-            String result = "";
-            JOptionPane.showMessageDialog(this, result);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Nenhum dado pode ser Nulo.\nErro:"+e);
-        }
-
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void JTextDirecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextDirecaoActionPerformed
