@@ -15,7 +15,7 @@ public interface Interface_FolhaPagamento {
     
     public String Cadastrar_FolhaPagamento();
     
-    public ArrayList<FolhaPagamento> buscar_FolhaPagamento() throws Exception;
+    //public ArrayList<FolhaPagamento> buscar_FolhaPagamento() throws Exception;
     
     public String remover_FolhaPagamento()throws Exception;
     
