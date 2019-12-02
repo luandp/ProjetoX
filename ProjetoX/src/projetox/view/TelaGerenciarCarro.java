@@ -73,6 +73,11 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
         JBtnCadastrar.setText("Novo Carro");
+        JBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnCadastrarActionPerformed(evt);
+            }
+        });
 
         jLabelNome.setText("Modelo:");
 
@@ -165,6 +170,11 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
         }
         jTable.setModel(model);   
     }//GEN-LAST:event_JBtnBuscarActionPerformed
+
+    private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
+        TelaCadastrarCarro TelaCad = new TelaCadastrarCarro();
+                TelaCad.show();
+    }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments

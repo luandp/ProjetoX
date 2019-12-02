@@ -18,7 +18,7 @@ public class Facade_Funcionario {
     Controller_Funcionario control = new Controller_Funcionario();
     
     
-    public String Cadastrar_Funcionario(String nome, String cpf, String senha, String cargo, String salario, String login){
+    public String Cadastrar_Funcionario(String nome, String cpf, String senha, String cargo, String salario, String login) throws Exception{
             return control.Validar_Cadastro(nome, cpf, senha, cargo, salario,login);
         }
      

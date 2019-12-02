@@ -171,7 +171,7 @@ public class TelaCadastrarFuncionario extends javax.swing.JFrame {
         //chama view
         String result = fachada.Cadastrar_Funcionario(nome, cpf, senha, cargo, salario,login);
         JOptionPane.showMessageDialog(this, result);
-        } catch (HeadlessException e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro:"+e);
         }    }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
