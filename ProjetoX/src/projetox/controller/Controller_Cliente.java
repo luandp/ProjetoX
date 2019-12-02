@@ -49,14 +49,15 @@ public class Controller_Cliente {
         clientes = model.buscar_Cliente(nome);
         return clientes;
     }
-    public String verificarRemocao(int id,String cargo)throws Exception
+    public String verificarRemocao(int id)throws Exception
     {
         if(id==0)
         {
             throw  new Exception("Informe um usuário para ser excluido");
         }
         boolean retorno;
-        retorno = model.veirificarRemocao(cargo);
+        //retorno = model.veirificarRemocao(id);
+        retorno = false;
         if(retorno == true)
         {
             throw  new Exception("Você é o último usuário Administrador, por isso não pode ser removido");
@@ -78,8 +79,8 @@ public class Controller_Cliente {
        return "ok";
     }
      
-    /*
-        public void validarAtualizacao(Cliente novo,int id,String login)throws Exception
+    
+        public String validarAtualizacao(Cliente novo,int id)throws Exception
     {
         if(novo.getNome().trim().equals(""))
         {
@@ -91,6 +92,7 @@ public class Controller_Cliente {
             throw  new Exception("Informe o nome completo do funcionario ");
             
         }
+        /*
         if(novo.getLogin().trim().equals(""))
         {
             throw  new Exception("Informe o Login do funcionario");
@@ -119,9 +121,9 @@ public class Controller_Cliente {
             {
                 throw  new Exception("Já existe um usuário com esse Login");
             }
-        }
-            model.atualizar_Cliente(novo,id);
+        }*/
+            return model.atualizar_Cliente(novo,id);
             
     }
-   */
+   
 }

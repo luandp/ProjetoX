@@ -5,6 +5,10 @@
  */
 package projetox.view;
 
+import javax.swing.JOptionPane;
+import projetox.Class.Cliente;
+import projetox.facade.Facade_Cliente;
+
 /**
  *
  * @author Luan Paulo
@@ -16,6 +20,29 @@ public class TelaAtualizarCliente extends javax.swing.JFrame {
      */
     public TelaAtualizarCliente() {
         initComponents();
+    }
+    int id = 0;
+    
+    public TelaAtualizarCliente(Cliente cliente) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        id = cliente.getId();
+        JTextNome.setText(cliente.getNome());
+        JTextIdade.setText(Integer.toString(cliente.getIdade()));
+        JTextCPF.setText(cliente.getCPF());
+        JTextRua.setText(cliente.getLogradouro());
+        JTextCidade.setText(cliente.getCidade());
+        JTextN_casa.setText(Integer.toString(cliente.getN_casa()));
+        JTextCep.setText(cliente.getCep());
+        JTextBairro.setText(cliente.getBairro());
+        JTextEstado.setText(cliente.getEstado());
+        JTextTelefone.setText(cliente.getTelefone());
+        
+        
+        
+        
+        
+        
     }
 
     /**
@@ -220,8 +247,24 @@ public class TelaAtualizarCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
+        try {
+            Cliente atualizado = new Cliente();
+            atualizado.setId(id);
+            atualizado.setNome(JTextNome.getText());
+            atualizado.setIdade(Integer.parseInt(JTextIdade.getText()));
+            atualizado.setCPF(JTextCPF.getText());
+            atualizado.setLogradouro(JTextRua.getText());
+            atualizado.setCidade(JTextCidade.getText());
+            atualizado.setN_casa(Integer.parseInt(JTextN_casa.getText()));
+            atualizado.setCep(JTextCep.getText());
+            atualizado.setBairro(JTextBairro.getText());
+            atualizado.setEstado(JTextEstado.getText());
+            atualizado.setTelefone(JTextTelefone.getText());
+            fachada.validar_Atualizacao(atualizado, id);
+            JOptionPane.showMessageDialog(rootPane,"Cliente atualizado");
+        } catch (Exception e) {
+        }
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void JTextCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextCepActionPerformed
@@ -266,7 +309,7 @@ public class TelaAtualizarCliente extends javax.swing.JFrame {
             }
         });
     }
-
+    Facade_Cliente fachada = new Facade_Cliente();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTextBairro;
     private javax.swing.JFormattedTextField JTextCPF;
