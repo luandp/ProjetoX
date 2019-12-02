@@ -28,7 +28,8 @@ public class Model_Carro {
         
         try {
             Statement conexao = banco.Abrir();
-            String InsertCarro = "insert into Carro (Placa,Marca,Modelo,Cor,Ano,Portas,Arcondicionado,Direcao,Vidroeletrico,Alarme,Cambio,Combustivel,Multimidia,Tipo,Status)values "
+            JOptionPane.showMessageDialog(null, "Chegou no insert");
+            /*String InsertCarro = "insert into Carro Placa, Marca, Modelo, Cor, Ano, Portas, Arcondicionado, Direcao, Vidroeletrico, Alarme, Classe, Combustivel, Cambio, Multimidia, Tipo, Status values "
                     + "','"+novo.getPlaca()
                     + "','"+novo.getMarca()
                     + "','"+novo.getModelo()
@@ -39,12 +40,26 @@ public class Model_Carro {
                     + "','"+novo.getDirecao()
                     + "','"+novo.isVeletrico()
                     + "','"+novo.isAlarme()
-                    + "','"+novo.isCambioauto()
+                    + "','"+novo.getClasse()
                     + "','"+novo.getCombustivel()
+                    + "','"+true//
                     + "','"+novo.isMultimidia()
+                    + "','"+novo.getTipo()
                     + "','"+novo.getStatus()
-                    + "','"+novo.getTipo()+"')";
-            conexao.execute(InsertCarro);      
+                    +"')";
+            */
+            String InsertCarro2 = "insert into Carro "
+                    + "(Placa,Marca,Modelo,Cor,Ano,Portas,Arcondicionado,Direcao,Vidroeletrico,Alarme,Classe,Combustivel,Cambio,Multimidia,Tipo,Status)"
+                    + "values"
+                    + " ('"+novo.getPlaca()+"','"+novo.getMarca()+"','"+novo.getModelo()+"','"+novo.getCor()+"',"
+                    + " "+novo.getAno()+","+novo.getPortas()+",'"+novo.isArcondicionado()+"','"+novo.getDirecao()+"',"
+                    + " '"+novo.isVeletrico()+"','"+novo.isAlarme()+"','"+novo.getClasse()+"','"+novo.getCombustivel()+"',"
+                    + " '"+novo.getCambioauto()+"','"+novo.isMultimidia()+"','"+novo.getTipo()+"','"+novo.getStatus()+"')";
+            
+            
+            JOptionPane.showMessageDialog(null, "terminou o insert");
+            conexao.execute(InsertCarro2);     
+            JOptionPane.showMessageDialog(null, "executou o insert");
             return  "Carro Cadastrado com Sucesso!";
         } catch (Exception e) {
             return  ""+e;
@@ -76,7 +91,7 @@ public class Model_Carro {
             carro.setAlarme(resposta.getBoolean("Alarme"));
             carro.setTipo(resposta.getString("Tipo"));
             carro.setCombustivel(resposta.getString("Combustivel"));
-            carro.setCambioauto(resposta.getBoolean("Cambio"));
+            carro.setCambioauto(resposta.getString("Cambio"));
             carro.setMultimidia(resposta.getBoolean("Multimidia"));
             carro.setStatus(resposta.getString("Status"));
           
@@ -96,15 +111,15 @@ public class Model_Carro {
      
      
      
-     public String remover_Carro(String Modelo)throws Exception
+     public String remover_Carro(int id)throws Exception
     {
         try {
+            JOptionPane.showMessageDialog(null, "Chegou no banco");
             Statement conexao = banco.Abrir();
-            String deleteCarro = "delete from Carro where ModeloCarro = "+Modelo+"";
+            String deleteCarro = "Delete * from Carro where Codigo = "+id+";";
+            JOptionPane.showMessageDialog(null, "escreveu o insert");
             conexao.execute(deleteCarro);
-            String deletePessoa = "delete from Carro where Modelo = "+Modelo+"";
-            conexao.execute(deletePessoa);
-            
+             JOptionPane.showMessageDialog(null, "executou o insert");
         } catch (SQLException e)
         {
             throw  new Exception("Erro delete:"+e);
@@ -116,19 +131,26 @@ public class Model_Carro {
      
      
      
-    public void atualizar_Carro(Carro novo,String Modelo)throws Exception
+    public String atualizar_Carro(Carro novo,int id)throws Exception
     {
         try {
             Statement conexao = banco.Abrir();
-
-            String updateCarro = "update  Carro set Placa = '"+novo.getPlaca()+"',Marca = '"+novo.getMarca()+"',Modelo = '"+novo.getModelo()+"',Cor = '"+novo.getCor()+"',Ano = '"+novo.getAno()+"',Portas = '"+novo.getPortas()+"',Arcondicionado = '"+novo.isArcondicionado()+"',Direcao = '"+novo.getDirecao()+"',Vidroeletrico = '"+novo.isVeletrico()+"',Alarme = '"+novo.isAlarme()+"',Tipo = '"+novo.getTipo()+"',Combustivel = '"+novo.getCombustivel()+"',Cambio = '"+novo.isCambioauto()+"',Multimidia = '"+novo.isMultimidia()+"',Status = "+novo.getStatus()+" where ModeloCarro = "+Modelo+"";
+            
+            
+           
+            //String updateCarro = "update  Carro set Placa = '"+novo.getPlaca()+"',Marca = '"+novo.getMarca()+"',Modelo = '"+novo.getModelo()+"',Cor = '"+novo.getCor()+"',Ano = '"+novo.getAno()+"',Portas = '"+novo.getPortas()+"',Arcondicionado = '"+novo.isArcondicionado()+"',Direcao = '"+novo.getDirecao()+"',Vidroeletrico = '"+novo.isVeletrico()+"',Alarme = '"+novo.isAlarme()+"',Tipo = '"+novo.getTipo()+"',Combustivel = '"+novo.getCombustivel()+"',Cambio = '"+novo.getCambioauto()+"',Multimidia = '"+novo.isMultimidia()+"',Status = "+novo.getStatus()+" where Codigo = "+id+"";
+           String updateCarro = "update Carro set "
+                                + "Placa = '"+novo.getPlaca()+"',Marca = '"+novo.getMarca()+"',Modelo = '"+novo.getModelo()+"',Cor = '"+novo.getCor()+"',Ano = "+novo.getAno()+" ,"
+                                + "Portas = "+novo.getPortas()+",Arcondicionado = '"+novo.isArcondicionado()+"',Direcao = '"+novo.getDirecao()+"',Vidroeletrico = '"+novo.isVeletrico()+"',"
+                                + "Alarme = '"+novo.isAlarme()+"',Classe = '"+novo.getClasse()+"',Combustivel = '"+novo.getCombustivel()+"',Cambio = '"+novo.getCambioauto()+"',"
+                                + "Multimidia = '"+novo.isMultimidia()+"',Tipo = '"+novo.getTipo()+"', Status = '"+novo.getStatus()+"' ";
+            
             conexao.executeUpdate(updateCarro);
-
-
         } catch (SQLException e) {
-            throw  new Exception("Erro update: "+e);
+             throw  new Exception("Erro update: "+e);
         }
         banco.Fechar();
+        return "Carro Atualizado com Sucesso!";
     }
     
     

@@ -11,6 +11,44 @@ package projetox.Documentos;
  */
 public class Documento {
     /*
+        Situação Atual
+            Gerenciar
+                Carro
+                    Buscar - ok
+                    Atualizar - ok
+                    Remover - Erro
+                    Cadastrar - ok
+                Cliente
+                    Buscar - ok
+                    Atualizar - ok
+                    Remover - Erro
+                    Cadastrar - ok
+                Funcionario
+                    Buscar - ok
+                    Atualizar - ok
+                    Remover - ok
+                    Cadastrar - ok
+            Operacao
+                Aluguel...
+                    Buscar - Sem Nada
+                    Atualizar - Sem Nada
+                    Remover - Sem Nada
+                    Cadastrar - Sem Nada
+                Vendas...
+                    Buscar - Sem Nada
+                    Atualizar - Sem Nada
+                    Remover - Sem Nada
+                    Cadastrar - Sem Nada
+            Folha de Pagamento
+                 Buscar - Sem Nada
+                 Atualizar - Sem Nada
+                 Remover - Sem Nada
+                 Cadastrar - Sem Nada
+            Variaveis de Sistema
+                 Abrir Banco - ok
+                 Fechar Banco - ok
+    
+    
         Esta Classe se destina a Comentar sobre o Projeto,
         Informações pertinentes a implementação do Modelo,
         ou de como Algum erro está se comportando.

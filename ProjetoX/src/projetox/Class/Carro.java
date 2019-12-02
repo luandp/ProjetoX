@@ -24,7 +24,7 @@ public class Carro {
         String classe;//sedan ou ratch ou suv
         String tipo;//Aluguel - Venda
         String combustivel;//gasolina ou alcool ou flex ou diesel
-        boolean cambioauto;//automatico ou manual
+        String cambioauto;//automatico ou manual
         boolean multimidia;//
         String status;//Disponivel - vendido - Alugado - em Manutenção
 
@@ -44,12 +44,12 @@ public class Carro {
         this.classe = "";
         this.tipo = "";
         this.combustivel = "";
-        this.cambioauto = false;
+        this.cambioauto = "";
         this.multimidia = false;
         this.status = "";
     }
-        
-    public Carro(String placa, String marca, String modelo, String cor, int ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String classe,String tipo, String combustivel, boolean cambioauto, boolean multimidia, String status) {
+
+    public Carro(String placa, String marca, String modelo, String cor, int ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String classe, String tipo, String combustivel, String cambioauto, boolean multimidia, String status) {
         this.id = 0;
         this.placa = placa;
         this.marca = marca;
@@ -68,6 +68,7 @@ public class Carro {
         this.multimidia = multimidia;
         this.status = status;
     }
+        
     public String getClasse() {
         return classe;
     }
@@ -188,11 +189,11 @@ public class Carro {
         this.combustivel = combustivel;
     }
 
-    public boolean isCambioauto() {
+    public String getCambioauto() {
         return cambioauto;
     }
 
-    public void setCambioauto(boolean cambioauto) {
+    public void setCambioauto(String cambioauto) {
         this.cambioauto = cambioauto;
     }
 

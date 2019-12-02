@@ -68,12 +68,12 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Classe");
 
-        JTextCambio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manual", "Automático" }));
+        JTextCambio.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Manual", "Automatico" }));
 
         Sim.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Sim.setText("Marca");
 
-        JTextMultimidia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+        JTextMultimidia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Nao" }));
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Cambio");
@@ -167,22 +167,22 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
             }
         });
 
-        JTextDirecao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hidráulica", "Elétrica", "Mecânica" }));
+        JTextDirecao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hidraulica", "Eletrica", "Mecanica" }));
 
-        JTextarcondicionado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+        JTextarcondicionado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Nao" }));
 
-        JTextVeletrico123.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+        JTextVeletrico123.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Nao" }));
         JTextVeletrico123.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextVeletrico123ActionPerformed(evt);
             }
         });
 
-        JTextAlarme.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+        JTextAlarme.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Nao" }));
 
         JTextClasse.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hatch", "Sedan", "SUV" }));
 
-        JTextCombustivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gasolina", "Álcool", "Flex" }));
+        JTextCombustivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gasolina", "Alcool", "Flex" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -378,10 +378,16 @@ public class TelaCadastrarCarro extends javax.swing.JFrame {
         String alarme = JTextAlarme.getSelectedItem().toString();
         String classe = JTextClasse.getSelectedItem().toString();
         String combustivel = JTextCombustivel.getSelectedItem().toString();
-        String cambio = JTextCambio.getSelectedItem().toString();
-        //Texto Padrão
+        String cambioauto = JTextCambio.getSelectedItem().toString();
+        String multimidia = JTextMultimidia.getSelectedItem().toString();
+        String tipo = JTextTipo.getSelectedItem().toString();
+                
+//Texto Padrão
         //chama view
-        String result = fachada.Cadastrar_Carro(placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, classe, ano, combustivel, cambio, cambio, portas);
+        String result = fachada.Cadastrar_Carro(placa,marca,modelo,cor,ano,portas,arcondicionado,direcao,veletrico,alarme,classe,tipo,combustivel,cambioauto,multimidia,"Disponivel");
+        //placa,marca,modelo,cor,ano,portas,arcondicionado,direcao,veletrico,alarme,classe,tipo,combustivel,cambioauto,multimidia,status
+        //String placa, String marca, String modelo, String cor, int ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String classe, String tipo, String combustivel, boolean cambioauto, boolean multimidia, String status
+        
         JOptionPane.showMessageDialog(this, result);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro:"+e);

@@ -37,12 +37,7 @@ public class TelaAtualizarCliente extends javax.swing.JFrame {
         JTextBairro.setText(cliente.getBairro());
         JTextEstado.setText(cliente.getEstado());
         JTextTelefone.setText(cliente.getTelefone());
-        
-        
-        
-        
-        
-        
+
     }
 
     /**

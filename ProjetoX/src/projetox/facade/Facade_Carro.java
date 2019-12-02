@@ -18,31 +18,7 @@ public class Facade_Carro {
     Controller_Carro control = new Controller_Carro();
 
     public String Cadastrar_Carro(String placa, String marca, String modelo, String cor,String ano,String portas,String arcondicionado, String direcao,String veletrico,String alarme, String classe,String tipo, String combustivel,String cambioauto,String multimidia, String status) throws Exception{
-      //recebe variaveis
-     String retorno = ""; 
-      
-
-      //chama controller
-      retorno = control.Validar_Cadastro(placa,marca,modelo,cor,ano,portas,arcondicionado,direcao,veletrico,alarme,classe,tipo,combustivel,cambioauto,multimidia,status);
-        
-        
-        //return retorno;
-      /*  return "Cliente Cadastrado com Sucesso!"
-                + "\nNome:"+nome+""
-                + "\nCPF:"+cpf+""
-                + "\nIdade:"+idade+""
-                + "\nLogradouro:"+logradouro+""
-                + "\nN da Casa:"+n_casa+""
-                + "\nCEP:"+cep+""
-                + "\nBairro:"+bairro+""
-                + "\nCidade:"+cidade+""
-                + "\nEstado:"+estado+""
-                + "\nTelefone:"+telefone+""
-                ;*/
-        
-    
-        //control.Validar_Cadastro();
-        return "";
+        return control.Validar_Cadastro(placa,marca,modelo,cor,ano,portas,arcondicionado,direcao,veletrico,alarme,classe,tipo,combustivel,cambioauto,multimidia,status);
     }
     
     public ArrayList Listar_Carro(){
@@ -65,5 +41,12 @@ public class Facade_Carro {
     public ArrayList Listar_Carros(String nome) throws Exception{
         ArrayList<Carro> carros  = new ArrayList<>();
         return control.ValidarBusca(nome);
+    }
+    public String Excluir_Carro(int id) throws Exception{
+        
+        return control.verificarRemocao(id);
+    }
+    public String validar_Atualizacao(int id, String placa, String marca, String modelo, String cor,String ano,String portas,String arcondicionado, String direcao,String veletrico,String alarme, String classe,String tipo, String combustivel,String cambioauto,String multimidia, String status)throws Exception{
+        return control.validarAtualizacao(id,placa,marca,modelo,cor,ano,portas,arcondicionado,direcao,veletrico,alarme,classe,tipo,combustivel,cambioauto,multimidia,status);
     }
 }

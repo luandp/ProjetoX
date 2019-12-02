@@ -167,7 +167,7 @@ public TelaGerenciarCliente(int codigo) {
     }//GEN-LAST:event_JBtnAtualizar2ActionPerformed
 
     private void JBtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnBuscarActionPerformed
-               DefaultTableModel model = new DefaultTableModel();
+        DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(new String[]{"Nome", "CPF", "Logradouro", "Id"});
         String nome = jTextBuscar.getText();
         try {

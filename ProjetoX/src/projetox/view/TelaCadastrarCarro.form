@@ -225,7 +225,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
             <StringItem index="0" value="Manual"/>
-            <StringItem index="1" value="Autom&#xe1;tico"/>
+            <StringItem index="1" value="Automatico"/>
           </StringArray>
         </Property>
       </Properties>
@@ -241,7 +241,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
             <StringItem index="0" value="Sim"/>
-            <StringItem index="1" value="N&#xe3;o"/>
+            <StringItem index="1" value="Nao"/>
           </StringArray>
         </Property>
       </Properties>
@@ -389,9 +389,9 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
-            <StringItem index="0" value="Hidr&#xe1;ulica"/>
-            <StringItem index="1" value="El&#xe9;trica"/>
-            <StringItem index="2" value="Mec&#xe2;nica"/>
+            <StringItem index="0" value="Hidraulica"/>
+            <StringItem index="1" value="Eletrica"/>
+            <StringItem index="2" value="Mecanica"/>
           </StringArray>
         </Property>
       </Properties>
@@ -401,7 +401,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
             <StringItem index="0" value="Sim"/>
-            <StringItem index="1" value="N&#xe3;o"/>
+            <StringItem index="1" value="Nao"/>
           </StringArray>
         </Property>
       </Properties>
@@ -411,7 +411,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
             <StringItem index="0" value="Sim"/>
-            <StringItem index="1" value="N&#xe3;o"/>
+            <StringItem index="1" value="Nao"/>
           </StringArray>
         </Property>
       </Properties>
@@ -424,7 +424,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
             <StringItem index="0" value="Sim"/>
-            <StringItem index="1" value="N&#xe3;o"/>
+            <StringItem index="1" value="Nao"/>
           </StringArray>
         </Property>
       </Properties>
@@ -445,7 +445,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
             <StringItem index="0" value="Gasolina"/>
-            <StringItem index="1" value="&#xc1;lcool"/>
+            <StringItem index="1" value="Alcool"/>
             <StringItem index="2" value="Flex"/>
           </StringArray>
         </Property>

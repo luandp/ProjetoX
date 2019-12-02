@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import projetox.Class.Carro;
+import projetox.Class.Cliente;
 import projetox.facade.Facade_Carro;
 
 /**
@@ -34,7 +35,7 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         model.setColumnIdentifiers(new String[]{"Modelo", "Placa", "Id", "Status"});
-        jTable.setModel(model);
+        jTable1.setModel(model);
         codigo_defaut = codigo;
         
     }
@@ -55,7 +56,7 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
         JBtnBuscar = new javax.swing.JButton();
         jTextBuscar = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gerenciar Carros - ProjetoX");
@@ -70,6 +71,11 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
 
         JBtnRemover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/delete.png"))); // NOI18N
         JBtnRemover.setText("Remover");
+        JBtnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnRemoverActionPerformed(evt);
+            }
+        });
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
         JBtnCadastrar.setText("Novo Carro");
@@ -89,7 +95,7 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
             }
         });
 
-        jTable.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -97,7 +103,7 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable);
+        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,7 +159,20 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBtnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnAtualizarActionPerformed
-        // TODO add your handling code here:
+             Carro carro = new Carro();
+        if (jTable1.getRowCount() > 0) {
+            int index = jTable1.getSelectedRow();
+            for (int i = 0; i < carros.size(); i++) {
+                if (index == i) {
+                    TelaAtualizarCarro atualizar = new TelaAtualizarCarro(carros.get(i));
+                    atualizar.show();
+                }
+            }
+            DefaultTableModel model = new DefaultTableModel();
+            model.setColumnIdentifiers(new String[]{"Nome", "CPF", "Logradouro", "Id"});
+            jTable1.setModel(model);
+
+        }
     }//GEN-LAST:event_JBtnAtualizarActionPerformed
 
     private void JBtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnBuscarActionPerformed
@@ -168,13 +187,35 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro: ", JOptionPane.ERROR_MESSAGE);
         }
-        jTable.setModel(model);   
+        jTable1.setModel(model);   
     }//GEN-LAST:event_JBtnBuscarActionPerformed
 
     private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
         TelaCadastrarCarro TelaCad = new TelaCadastrarCarro();
                 TelaCad.show();
     }//GEN-LAST:event_JBtnCadastrarActionPerformed
+
+    private void JBtnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnRemoverActionPerformed
+        if (jTable1.getSelectedRow() > 0) {
+            try {
+                int index = jTable1.getSelectedRow();
+                String retorno = "";
+                for (int i = 0; i < carros.size(); i++)
+                {
+                    if (index == i)
+                    {
+                        retorno = fachada.Excluir_Carro(carros.get(i).getId());
+                    }
+                }
+             JOptionPane.showMessageDialog(null,retorno);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro:"+e);
+            }
+            DefaultTableModel modelo = new DefaultTableModel();
+            modelo.setColumnIdentifiers(new String[]{"Modelo", "Placa", "Id", "Status"});
+            jTable1.setModel(modelo);
+        }
+    }//GEN-LAST:event_JBtnRemoverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,7 +259,7 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
     private javax.swing.JButton JBtnRemover;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextBuscar;
     // End of variables declaration//GEN-END:variables
 }
