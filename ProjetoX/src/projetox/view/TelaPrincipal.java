@@ -36,7 +36,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JCadCarro.setVisible(false);
             JFolha.setVisible(false);
             jVariaveis.setVisible(false);
-            JEstoque.setVisible(false);
                      
         }
         JOptionPane.showMessageDialog(null, "olá "+funcionario.getNome()+"\nAcesso:"+funcionario.getCargo()+"\nSeja Bem-Vindo ao Sistema","Bem Vindo", JOptionPane.INFORMATION_MESSAGE);
@@ -61,7 +60,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         JOperacao = new javax.swing.JMenu();
         JOpeAluguel = new javax.swing.JMenuItem();
         JOpeVendas = new javax.swing.JMenuItem();
-        JEstoque = new javax.swing.JMenu();
         JFolha = new javax.swing.JMenu();
         jVariaveis = new javax.swing.JMenu();
         JSair = new javax.swing.JMenu();
@@ -132,20 +130,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         JOperacao.add(JOpeVendas);
 
         JMenu.add(JOperacao);
-
-        JEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/warehouse.png"))); // NOI18N
-        JEstoque.setText("Estoque");
-        JEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JEstoqueMouseClicked(evt);
-            }
-        });
-        JEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JEstoqueActionPerformed(evt);
-            }
-        });
-        JMenu.add(JEstoque);
 
         JFolha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/bank.png"))); // NOI18N
         JFolha.setText("Folha de Pagamento");
@@ -238,11 +222,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
          GVend.show();
     }//GEN-LAST:event_JOpeVendasActionPerformed
 
-    private void JEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JEstoqueActionPerformed
-        //chamar tela Gerenciar Estoque
-        //evento morto
-    }//GEN-LAST:event_JEstoqueActionPerformed
-
     private void JFolhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFolhaActionPerformed
         //chamar tela Gerenciar Folha
         //evento morto
@@ -262,14 +241,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void JCadCarroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JCadCarroMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_JCadCarroMouseClicked
-
-    private void JEstoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JEstoqueMouseClicked
-        // TODO add your handling code here:
-            TelaGerenciarEstoque GEst = new TelaGerenciarEstoque();
-            GEst.show();
-
-
-    }//GEN-LAST:event_JEstoqueMouseClicked
 
     private void JFolhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JFolhaMouseClicked
         // TODO add your handling code here:
@@ -324,7 +295,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem JCadCliente;
     private javax.swing.JMenuItem JCadFuncionario;
     private javax.swing.JMenu JCadastrar;
-    private javax.swing.JMenu JEstoque;
     private javax.swing.JMenu JFolha;
     private javax.swing.JMenuBar JMenu;
     private javax.swing.JMenuItem JOpeAluguel;

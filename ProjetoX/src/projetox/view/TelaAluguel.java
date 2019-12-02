@@ -276,7 +276,8 @@ public class TelaAluguel extends javax.swing.JFrame {
     }//GEN-LAST:event_jBFinalizarActionPerformed
 
     private void jBPesquisarFilmes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarFilmes1ActionPerformed
-       
+                TelaConsultaCarro tcarro = new TelaConsultaCarro();
+                tcarro.show();
     }//GEN-LAST:event_jBPesquisarFilmes1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -284,7 +285,8 @@ public class TelaAluguel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void JBtnPesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnPesquisarClienteActionPerformed
-
+                TelaConsultaCliente tcc = new TelaConsultaCliente();
+                tcc.show();
     }//GEN-LAST:event_JBtnPesquisarClienteActionPerformed
 
     private void JTextNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextNomeActionPerformed

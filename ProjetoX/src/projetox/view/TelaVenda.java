@@ -282,11 +282,13 @@ public class TelaVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_JTextNomeActionPerformed
 
     private void jBPesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarClienteActionPerformed
-
+                    TelaConsultaCliente tcc = new TelaConsultaCliente();
+                    tcc.show();
     }//GEN-LAST:event_jBPesquisarClienteActionPerformed
 
     private void jBPesquisarCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarCarroActionPerformed
-
+                    TelaConsultaCarro Telacc = new TelaConsultaCarro();
+                    Telacc.show();
     }//GEN-LAST:event_jBPesquisarCarroActionPerformed
 
     /**

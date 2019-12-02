@@ -72,6 +72,11 @@ public class TelaGerenciarVenda extends javax.swing.JFrame {
 
         JBtnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projetox/view/Imagens/Próximo.png"))); // NOI18N
         JBtnCadastrar.setText("Nova Venda");
+        JBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBtnCadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,8 +134,15 @@ public class TelaGerenciarVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_JBtnBuscarActionPerformed
 
     private void JBtnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnAtualizarActionPerformed
-        // TODO add your handling code here:
+         TelaVenda tv = new TelaVenda();
+        tv.show();
     }//GEN-LAST:event_JBtnAtualizarActionPerformed
+
+    private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed
+     
+        TelaVenda tv = new TelaVenda();
+        tv.show();
+    }//GEN-LAST:event_JBtnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
