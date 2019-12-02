@@ -21,11 +21,12 @@ public class Carro {
         String direcao;//eletrica ou hidraulica ou mecanica
         boolean veletrico;
         boolean alarme;
-        String tipo;//sedan ou ratch ou suv
+        String classe;//sedan ou ratch ou suv
+        String tipo;//Aluguel - Venda
         String combustivel;//gasolina ou alcool ou flex ou diesel
         boolean cambioauto;//automatico ou manual
         boolean multimidia;//
-        boolean status;//disponivel(aluguel ou venda) -true
+        String status;//Disponivel - vendido - Alugado - em Manutenção
 
 
         public Carro() {
@@ -40,15 +41,16 @@ public class Carro {
         this.direcao = "";
         this.veletrico = false;
         this.alarme = false;
+        this.classe = "";
         this.tipo = "";
         this.combustivel = "";
         this.cambioauto = false;
         this.multimidia = false;
-        this.status = false;
+        this.status = "";
     }
         
-    public Carro(int id, String placa, String marca, String modelo, String cor, int ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String tipo, String combustivel, boolean cambioauto, boolean multimidia, boolean status) {
-        this.id = id;
+    public Carro(String placa, String marca, String modelo, String cor, int ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String classe,String tipo, String combustivel, boolean cambioauto, boolean multimidia, String status) {
+        this.id = 0;
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -59,18 +61,25 @@ public class Carro {
         this.direcao = direcao;
         this.veletrico = veletrico;
         this.alarme = alarme;
+        this.classe = classe;
         this.tipo = tipo;
         this.combustivel = combustivel;
         this.cambioauto = cambioauto;
         this.multimidia = multimidia;
         this.status = status;
     }
+    public String getClasse() {
+        return classe;
+    }
 
-    public boolean isStatus() {
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

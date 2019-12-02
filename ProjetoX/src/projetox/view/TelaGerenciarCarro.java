@@ -28,8 +28,6 @@ public class TelaGerenciarCarro extends javax.swing.JFrame {
     int codigo_defaut = 0;
     public TelaGerenciarCarro() {
         initComponents();
-        
-        
     }
     public TelaGerenciarCarro(int codigo) {
         

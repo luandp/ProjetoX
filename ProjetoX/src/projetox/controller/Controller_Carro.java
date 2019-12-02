@@ -18,25 +18,34 @@ public class Controller_Carro {
     
     Model_Carro model = new Model_Carro();
     
-    public String Validar_Cadastro(int id, String placa, String marca, String modelo, String cor, int ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String tipo, String combustivel, boolean cambioauto, boolean multimidia, boolean status) throws Exception{
-    
-        //fazer validacoes aqui
-        //Transformar Variaveis
-     
-      
-        //Logradouro é String
-        
-        //Bairro é String
-        //Cidade é String
-        //Estado é String
-        //Telefone é String
-        
-        //int idade, String logradouro, int n_casa, int cep, String bairro, String cidade, String estado, String telefone, int id, String nome, String CPF;
+    public String Validar_Cadastro(String placa, String marca, String modelo, String cor,String ano,String portas,String arcondicionado, String direcao,String veletrico,String alarme, String classe,String tipo, String combustivel,String cambioauto,String multimidia, String status) throws Exception{
+//        int id;
+//        String placa;
+//        String marca;
+//        String modelo;
+//        String cor;
+//        int ano;
+          int anoConvertido = Integer.parseInt(ano);
+//        int portas;//2 ou 4;
+          int portasConvertido = Integer.parseInt(portas);
+//        boolean arcondicionado;
+          boolean arcondicionadoConvertido = Boolean.parseBoolean(arcondicionado);
+//        String direcao;//eletrica ou hidraulica ou mecanica
+//        boolean veletrico;
+          boolean veeletricoConvertido = Boolean.parseBoolean(veletrico);
+//        boolean alarme;
+          boolean alarmeConvertido = Boolean.parseBoolean(alarme);
+//        String classe;//sedan ou ratch ou suv
+//        String tipo;//Aluguel - Venda
+//        String combustivel;//gasolina ou alcool ou flex ou diesel
+//        boolean cambioauto;//automatico ou manual
+          boolean cambioautoConvertido = Boolean.parseBoolean(cambioauto);
+//        boolean multimidia;//
+          boolean multimidiaConvertido = Boolean.parseBoolean(multimidia);
+//        String status;//Disponivel - vendido - Alugado - em Manutenção
         
         String retorno = "";
-        //criar classe cliente e popular dados
-        //int idade, String logradouro, int n_casa, int cep, String bairro, String cidade, String estado, String telefone, int id, String nome, String CPF
-        Carro novo = new Carro(id, placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, tipo, combustivel, cambioauto, multimidia, status);
+        Carro novo = new Carro(placa,marca,modelo,cor,anoConvertido,portasConvertido,arcondicionadoConvertido,direcao,veeletricoConvertido,alarmeConvertido,classe,tipo,combustivel,cambioautoConvertido,multimidiaConvertido,status);
         
         
         //chamar model

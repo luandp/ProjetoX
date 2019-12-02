@@ -17,13 +17,13 @@ public class Facade_Carro {
     
     Controller_Carro control = new Controller_Carro();
 
-    public String Cadastrar_Carro(int id, String placa, String marca, String modelo, String cor, String ano, int portas, boolean arcondicionado, String direcao, boolean veletrico, boolean alarme, String tipo, String combustivel, boolean cambioauto, boolean multimidia, boolean status) throws Exception{
+    public String Cadastrar_Carro(String placa, String marca, String modelo, String cor,String ano,String portas,String arcondicionado, String direcao,String veletrico,String alarme, String classe,String tipo, String combustivel,String cambioauto,String multimidia, String status) throws Exception{
       //recebe variaveis
      String retorno = ""; 
       
 
       //chama controller
-      //retorno = control.Validar_Cadastro(placa, marca, modelo, cor, ano, portas, arcondicionado, direcao, veletrico, alarme, tipo, combustivel, cambioauto, multimidia, status);
+      retorno = control.Validar_Cadastro(placa,marca,modelo,cor,ano,portas,arcondicionado,direcao,veletrico,alarme,classe,tipo,combustivel,cambioauto,multimidia,status);
         
         
         //return retorno;
