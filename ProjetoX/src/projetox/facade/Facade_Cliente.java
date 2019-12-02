@@ -31,14 +31,17 @@ public class Facade_Cliente {
         ArrayList<Cliente> Clientes  = new ArrayList<>();
         return control.ValidarBusca(nome);
     }
-    public String Excluir_Cliente(){
-    
-        return "";
+    public String Excluir_Cliente(int id) throws Exception{
+        
+        return control.verificarRemocao(id);
     }
     
     public String Atualizar_Cliente(){
     
         return "";
     }
-    
+    public String validar_Atualizacao(Cliente novo,int id)throws Exception{
+        
+        return control.validarAtualizacao(novo, id);
+    }
 }

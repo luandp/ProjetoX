@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import projetox.Class.Cliente;
+import projetox.Class.Funcionario;
 import projetox.facade.Facade_Cliente;
 
 /**
@@ -149,7 +150,20 @@ public TelaGerenciarCliente(int codigo) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBtnAtualizar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnAtualizar2ActionPerformed
-        // TODO add your handling code here:
+           Cliente cliente = new Cliente();
+        if (jTable.getRowCount() > 0) {
+            int index = jTable.getSelectedRow();
+            for (int i = 0; i < clientes.size(); i++) {
+                if (index == i) {
+                    TelaAtualizarCliente atualizar = new TelaAtualizarCliente(clientes.get(i));
+                    atualizar.show();
+                }
+            }
+            DefaultTableModel model = new DefaultTableModel();
+            model.setColumnIdentifiers(new String[]{"Nome", "CPF", "Logradouro", "Id"});
+            jTable.setModel(model);
+
+        }
     }//GEN-LAST:event_JBtnAtualizar2ActionPerformed
 
     private void JBtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnBuscarActionPerformed
@@ -168,7 +182,25 @@ public TelaGerenciarCliente(int codigo) {
     }//GEN-LAST:event_JBtnBuscarActionPerformed
 
     private void JBtnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnRemoverActionPerformed
-        // TODO add your handling code here:
+            if (jTable.getSelectedRow() > 0) {
+            try {
+                int index = jTable.getSelectedRow();
+                for (int i = 0; i < clientes.size(); i++)
+                {
+                    if (index == i)
+                    {
+                        fachada.Excluir_Cliente(clientes.get(i).getId());
+                    }
+                }
+             JOptionPane.showMessageDialog(rootPane,"Cliente removido");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+            DefaultTableModel modelo = new DefaultTableModel();
+            modelo.setColumnIdentifiers(new String[]{"Nome", "CPF", "Logradouro", "Id"});
+            jTable.setModel(modelo);
+        }
+
     }//GEN-LAST:event_JBtnRemoverActionPerformed
 
     private void JBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnCadastrarActionPerformed

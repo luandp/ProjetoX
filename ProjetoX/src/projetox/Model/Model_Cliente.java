@@ -104,7 +104,7 @@ public class Model_Cliente {
      
      
      
-    public void atualizar_Cliente(Cliente novo,int id)throws Exception
+    public String atualizar_Cliente(Cliente novo,int id)throws Exception
     {
         try {
             Statement conexao = banco.Abrir();
@@ -113,17 +113,19 @@ public class Model_Cliente {
             conexao.executeUpdate(updateCliente);
             String updatePessoa = "update Pessoa set Nome = '"+novo.getNome()+"',CPF = '"+novo.getCPF()+"' where Codigo = "+id+"";
             conexao.executeUpdate(updatePessoa);
-
+            
         } catch (SQLException e) {
-            throw  new Exception("Erro update: "+e);
+           throw  new Exception("Erro update: "+e);
         }
         banco.Fechar();
+        return "Cliente Atualizado com Sucesso!";
     }
     
     
     //Alterar Depois
-    public boolean veirificarRemocao(String cargo)throws Exception
+    public boolean veirificarRemocao(int id)throws Exception
     {
+        String cargo = "";
         if(cargo.equals("Gerente"))
         {
             int index =0;

@@ -38,7 +38,7 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="JBtnRemover" alignment="0" max="32767" attributes="0"/>
-                  <Component id="JBtnCadastrar" alignment="0" pref="116" max="32767" attributes="0"/>
+                  <Component id="JBtnCadastrar" alignment="0" max="32767" attributes="0"/>
                   <Component id="JBtnAtualizar2" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
