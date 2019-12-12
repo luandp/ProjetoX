@@ -338,9 +338,7 @@ public class TelaVenda extends javax.swing.JFrame {
     }//GEN-LAST:event_JBtnFinalizarActionPerformed
 
     private void JBtnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnRemoverActionPerformed
-            //aqui
-              Double valor = 5.66;
-              if (jTable1.getRowCount() > 0) {
+            if (jTable1.getRowCount() > 0) {
             double a = Double.parseDouble(Valor.getText());
             String V = String.valueOf(carros.get(jTable1.getSelectedRow()).getId());//.substring(0, 4);
             a = a - Double.parseDouble(V);
